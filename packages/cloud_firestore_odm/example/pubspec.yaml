@@ -6,7 +6,11 @@ environment:
 
 dependencies:
   cloud_firestore: ^4.15.0
-  cloud_firestore_odm: ^1.0.0-dev.84
+  cloud_firestore_odm:
+    git:
+      url: https://github.com/lirantzairi/firestoreodm-flutter.git
+      ref: dev
+      path: packages/cloud_firestore_odm
   firebase_core: ^2.24.2
   flutter:
     sdk: flutter

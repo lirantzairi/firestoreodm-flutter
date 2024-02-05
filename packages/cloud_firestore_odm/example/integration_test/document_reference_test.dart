@@ -10,6 +10,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'common.dart';
+import 'firebase_options.dart';
 
 void main() {
   group('DocumentReference', () {
@@ -18,13 +19,8 @@ void main() {
     setUpAll(() async {
       customFirestore = FirebaseFirestore.instanceFor(
         app: await Firebase.initializeApp(
-          name: 'custom-document-app',
-          options: FirebaseOptions(
-            apiKey: Firebase.app().options.apiKey,
-            appId: Firebase.app().options.appId,
-            messagingSenderId: Firebase.app().options.messagingSenderId,
-            projectId: Firebase.app().options.projectId,
-          ),
+          name: '[DEFAULT]',
+          options: DefaultFirebaseOptions.currentPlatform,
         ),
       );
     });
