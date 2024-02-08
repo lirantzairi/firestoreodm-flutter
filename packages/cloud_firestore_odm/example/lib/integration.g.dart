@@ -516,9 +516,7 @@ class _$AdvancedJsonQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -548,9 +546,7 @@ class _$AdvancedJsonQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -595,9 +591,7 @@ class _$AdvancedJsonQuery
         whereIn: whereIn?.map((e) => _$AdvancedJsonPerFieldToJson.firstName(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$AdvancedJsonPerFieldToJson.firstName(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -642,9 +636,7 @@ class _$AdvancedJsonQuery
         whereIn: whereIn?.map((e) => _$AdvancedJsonPerFieldToJson.lastName(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$AdvancedJsonPerFieldToJson.lastName(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -1550,9 +1542,7 @@ class _$_PrivateAdvancedJsonQuery extends QueryReference<_PrivateAdvancedJson,
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -1582,9 +1572,7 @@ class _$_PrivateAdvancedJsonQuery extends QueryReference<_PrivateAdvancedJson,
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -1634,9 +1622,7 @@ class _$_PrivateAdvancedJsonQuery extends QueryReference<_PrivateAdvancedJson,
             ?.map((e) => _$PrivateAdvancedJsonPerFieldToJson.firstName(e)),
         whereNotIn: whereNotIn
             ?.map((e) => _$PrivateAdvancedJsonPerFieldToJson.firstName(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -1685,9 +1671,7 @@ class _$_PrivateAdvancedJsonQuery extends QueryReference<_PrivateAdvancedJson,
             ?.map((e) => _$PrivateAdvancedJsonPerFieldToJson.lastName(e)),
         whereNotIn: whereNotIn
             ?.map((e) => _$PrivateAdvancedJsonPerFieldToJson.lastName(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -2409,9 +2393,7 @@ class _$EmptyModelQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -2441,9 +2423,7 @@ class _$EmptyModelQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );

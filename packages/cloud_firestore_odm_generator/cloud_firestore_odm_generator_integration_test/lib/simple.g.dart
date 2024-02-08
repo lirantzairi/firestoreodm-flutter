@@ -454,9 +454,7 @@ class _$IgnoredGetterQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -486,9 +484,7 @@ class _$IgnoredGetterQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -531,9 +527,7 @@ class _$IgnoredGetterQuery
         whereIn: whereIn?.map((e) => _$IgnoredGetterPerFieldToJson.value(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$IgnoredGetterPerFieldToJson.value(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -1274,9 +1268,7 @@ class _$ModelQuery extends QueryReference<Model, ModelQuerySnapshot>
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -1306,9 +1298,7 @@ class _$ModelQuery extends QueryReference<Model, ModelQuerySnapshot>
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -1350,9 +1340,7 @@ class _$ModelQuery extends QueryReference<Model, ModelQuerySnapshot>
             : null,
         whereIn: whereIn?.map((e) => _$ModelPerFieldToJson.value(e)),
         whereNotIn: whereNotIn?.map((e) => _$ModelPerFieldToJson.value(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -2850,9 +2838,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -2882,9 +2868,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -2926,9 +2910,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
             : null,
         whereIn: whereIn?.map((e) => _$NestedPerFieldToJson.value(e)),
         whereNotIn: whereNotIn?.map((e) => _$NestedPerFieldToJson.value(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -2970,9 +2952,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
             : null,
         whereIn: whereIn?.map((e) => _$NestedPerFieldToJson.simple(e)),
         whereNotIn: whereNotIn?.map((e) => _$NestedPerFieldToJson.simple(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3023,9 +3003,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
             ? _$NestedPerFieldToJson.valueList(arrayContainsAny)
                 as Iterable<Object>?
             : null,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3076,9 +3054,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
             ? _$NestedPerFieldToJson.boolList(arrayContainsAny)
                 as Iterable<Object>?
             : null,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3129,9 +3105,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
             ? _$NestedPerFieldToJson.stringList(arrayContainsAny)
                 as Iterable<Object>?
             : null,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3180,9 +3154,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
             ? _$NestedPerFieldToJson.numList(arrayContainsAny)
                 as Iterable<Object>?
             : null,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3232,9 +3204,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
             ? _$NestedPerFieldToJson.objectList(arrayContainsAny)
                 as Iterable<Object>?
             : null,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3286,9 +3256,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
             ? _$NestedPerFieldToJson.dynamicList(arrayContainsAny)
                 as Iterable<Object>?
             : null,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3338,9 +3306,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
             ? _$NestedPerFieldToJson.boolSet(arrayContainsAny)
                 as Iterable<Object>?
             : null,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3383,9 +3349,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
             : null,
         whereIn: whereIn?.map((e) => _$NestedPerFieldToJson.enumValue(e)),
         whereNotIn: whereNotIn?.map((e) => _$NestedPerFieldToJson.enumValue(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3433,9 +3397,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
             whereIn?.map((e) => _$NestedPerFieldToJson.nullableEnumValue(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$NestedPerFieldToJson.nullableEnumValue(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3486,9 +3448,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
             ? _$NestedPerFieldToJson.enumList(arrayContainsAny)
                 as Iterable<Object>?
             : null,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3543,9 +3503,7 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
             ? _$NestedPerFieldToJson.nullableEnumList(arrayContainsAny)
                 as Iterable<Object>?
             : null,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -5062,9 +5020,7 @@ class _$EmptyModelQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -5094,9 +5050,7 @@ class _$EmptyModelQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -5777,9 +5731,7 @@ class _$OptionalJsonQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -5809,9 +5761,7 @@ class _$OptionalJsonQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -5854,9 +5804,7 @@ class _$OptionalJsonQuery
         whereIn: whereIn?.map((e) => _$OptionalJsonPerFieldToJson.value(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$OptionalJsonPerFieldToJson.value(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -6606,9 +6554,7 @@ class _$MixedJsonQuery extends QueryReference<MixedJson, MixedJsonQuerySnapshot>
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -6638,9 +6584,7 @@ class _$MixedJsonQuery extends QueryReference<MixedJson, MixedJsonQuerySnapshot>
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -6682,9 +6626,7 @@ class _$MixedJsonQuery extends QueryReference<MixedJson, MixedJsonQuerySnapshot>
             : null,
         whereIn: whereIn?.map((e) => _$MixedJsonPerFieldToJson.value(e)),
         whereNotIn: whereNotIn?.map((e) => _$MixedJsonPerFieldToJson.value(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -7530,9 +7472,7 @@ class _$RootQuery extends QueryReference<Root, RootQuerySnapshot>
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -7562,9 +7502,7 @@ class _$RootQuery extends QueryReference<Root, RootQuerySnapshot>
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -7606,9 +7544,7 @@ class _$RootQuery extends QueryReference<Root, RootQuerySnapshot>
             : null,
         whereIn: whereIn?.map((e) => _$RootPerFieldToJson.nonNullable(e)),
         whereNotIn: whereNotIn?.map((e) => _$RootPerFieldToJson.nonNullable(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -7650,9 +7586,7 @@ class _$RootQuery extends QueryReference<Root, RootQuerySnapshot>
             : null,
         whereIn: whereIn?.map((e) => _$RootPerFieldToJson.nullable(e)),
         whereNotIn: whereNotIn?.map((e) => _$RootPerFieldToJson.nullable(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -8547,9 +8481,7 @@ class _$SubQuery extends QueryReference<Sub, SubQuerySnapshot>
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -8579,9 +8511,7 @@ class _$SubQuery extends QueryReference<Sub, SubQuerySnapshot>
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -8623,9 +8553,7 @@ class _$SubQuery extends QueryReference<Sub, SubQuerySnapshot>
             : null,
         whereIn: whereIn?.map((e) => _$SubPerFieldToJson.nonNullable(e)),
         whereNotIn: whereNotIn?.map((e) => _$SubPerFieldToJson.nonNullable(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -8667,9 +8595,7 @@ class _$SubQuery extends QueryReference<Sub, SubQuerySnapshot>
             : null,
         whereIn: whereIn?.map((e) => _$SubPerFieldToJson.nullable(e)),
         whereNotIn: whereNotIn?.map((e) => _$SubPerFieldToJson.nullable(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -9512,9 +9438,7 @@ class _$AsCamelCaseQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -9544,9 +9468,7 @@ class _$AsCamelCaseQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -9589,9 +9511,7 @@ class _$AsCamelCaseQuery
         whereIn: whereIn?.map((e) => _$AsCamelCasePerFieldToJson.value(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$AsCamelCasePerFieldToJson.value(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -10367,9 +10287,7 @@ class _$CustomSubNameQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -10399,9 +10317,7 @@ class _$CustomSubNameQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -10444,9 +10360,7 @@ class _$CustomSubNameQuery
         whereIn: whereIn?.map((e) => _$CustomSubNamePerFieldToJson.value(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$CustomSubNamePerFieldToJson.value(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -11228,9 +11142,7 @@ class _$ThisIsACustomPrefixQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -11260,9 +11172,7 @@ class _$ThisIsACustomPrefixQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -11308,9 +11218,7 @@ class _$ThisIsACustomPrefixQuery
             whereIn?.map((e) => _$CustomClassPrefixPerFieldToJson.value(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$CustomClassPrefixPerFieldToJson.value(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -12079,9 +11987,7 @@ class _$ExplicitPathQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -12111,9 +12017,7 @@ class _$ExplicitPathQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -12156,9 +12060,7 @@ class _$ExplicitPathQuery
         whereIn: whereIn?.map((e) => _$ExplicitPathPerFieldToJson.value(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$ExplicitPathPerFieldToJson.value(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -12935,9 +12837,7 @@ class _$ExplicitSubPathQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -12967,9 +12867,7 @@ class _$ExplicitSubPathQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -13013,9 +12911,7 @@ class _$ExplicitSubPathQuery
         whereIn: whereIn?.map((e) => _$ExplicitSubPathPerFieldToJson.value(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$ExplicitSubPathPerFieldToJson.value(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );

@@ -348,9 +348,7 @@ class ${data.queryReferenceImplName}
         },
         'isNull': _WhereMapper(
           prototype: _WherePrototype.plain('bool?'),
-          map: (name) => 'isNull ?? '
-              '(isEqualTo == null ? false : null) ?? '
-              '(isNotEqualTo == null ? true : null)',
+          map: (name) => 'isNull',
         ),
       };
 

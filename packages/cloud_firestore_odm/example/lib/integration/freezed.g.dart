@@ -508,9 +508,7 @@ class _$PersonQuery extends QueryReference<Person, PersonQuerySnapshot>
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -540,9 +538,7 @@ class _$PersonQuery extends QueryReference<Person, PersonQuerySnapshot>
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -587,9 +583,7 @@ class _$PersonQuery extends QueryReference<Person, PersonQuerySnapshot>
         whereIn: whereIn?.map((e) => _$$PersonImplPerFieldToJson.firstName(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$$PersonImplPerFieldToJson.firstName(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -634,9 +628,7 @@ class _$PersonQuery extends QueryReference<Person, PersonQuerySnapshot>
         whereIn: whereIn?.map((e) => _$$PersonImplPerFieldToJson.lastName(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$$PersonImplPerFieldToJson.lastName(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -1466,9 +1458,7 @@ class _$PublicRedirectedQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -1498,9 +1488,7 @@ class _$PublicRedirectedQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -1548,9 +1536,7 @@ class _$PublicRedirectedQuery
             ?.map((e) => _$$PublicRedirected2ImplPerFieldToJson.value(e)),
         whereNotIn: whereNotIn
             ?.map((e) => _$$PublicRedirected2ImplPerFieldToJson.value(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );

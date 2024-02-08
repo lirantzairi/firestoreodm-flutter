@@ -456,9 +456,7 @@ class _$DurationQueryQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -488,9 +486,7 @@ class _$DurationQueryQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -535,9 +531,7 @@ class _$DurationQueryQuery
         whereIn: whereIn?.map((e) => _$DurationQueryPerFieldToJson.duration(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$DurationQueryPerFieldToJson.duration(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -1296,9 +1290,7 @@ class _$DateTimeQueryQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -1328,9 +1320,7 @@ class _$DateTimeQueryQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -1375,9 +1365,7 @@ class _$DateTimeQueryQuery
         whereIn: whereIn?.map((e) => _$DateTimeQueryPerFieldToJson.time(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$DateTimeQueryPerFieldToJson.time(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -2138,9 +2126,7 @@ class _$TimestampQueryQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -2170,9 +2156,7 @@ class _$TimestampQueryQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -2217,9 +2201,7 @@ class _$TimestampQueryQuery
         whereIn: whereIn?.map((e) => _$TimestampQueryPerFieldToJson.time(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$TimestampQueryPerFieldToJson.time(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -2981,9 +2963,7 @@ class _$GeoPointQueryQuery
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3013,9 +2993,7 @@ class _$GeoPointQueryQuery
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3060,9 +3038,7 @@ class _$GeoPointQueryQuery
         whereIn: whereIn?.map((e) => _$GeoPointQueryPerFieldToJson.point(e)),
         whereNotIn:
             whereNotIn?.map((e) => _$GeoPointQueryPerFieldToJson.point(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3837,9 +3813,7 @@ class _$DocumentReferenceQueryQuery extends QueryReference<
         arrayContainsAny: arrayContainsAny,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3869,9 +3843,7 @@ class _$DocumentReferenceQueryQuery extends QueryReference<
         isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
         whereIn: whereIn,
         whereNotIn: whereNotIn,
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
@@ -3921,9 +3893,7 @@ class _$DocumentReferenceQueryQuery extends QueryReference<
             whereIn?.map((e) => _$DocumentReferenceQueryPerFieldToJson.ref(e)),
         whereNotIn: whereNotIn
             ?.map((e) => _$DocumentReferenceQueryPerFieldToJson.ref(e)),
-        isNull: isNull ??
-            (isEqualTo == null ? false : null) ??
-            (isNotEqualTo == null ? true : null),
+        isNull: isNull,
       ),
       $queryCursor: $queryCursor,
     );
