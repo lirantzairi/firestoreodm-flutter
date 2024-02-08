@@ -136,21 +136,21 @@ abstract class MovieDocumentReference
   /// If no document exists yet, the update will fail.
   Future<void> update({
     String poster,
-    FieldValue posterFieldValue,
+    FieldValue? posterFieldValue,
     int likes,
-    FieldValue likesFieldValue,
+    FieldValue? likesFieldValue,
     String title,
-    FieldValue titleFieldValue,
+    FieldValue? titleFieldValue,
     int year,
-    FieldValue yearFieldValue,
+    FieldValue? yearFieldValue,
     String runtime,
-    FieldValue runtimeFieldValue,
+    FieldValue? runtimeFieldValue,
     String rated,
-    FieldValue ratedFieldValue,
+    FieldValue? ratedFieldValue,
     List<String>? genre,
-    FieldValue genreFieldValue,
+    FieldValue? genreFieldValue,
     Set<String>? tags,
-    FieldValue tagsFieldValue,
+    FieldValue? tagsFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -159,21 +159,21 @@ abstract class MovieDocumentReference
   void transactionUpdate(
     Transaction transaction, {
     String poster,
-    FieldValue posterFieldValue,
+    FieldValue? posterFieldValue,
     int likes,
-    FieldValue likesFieldValue,
+    FieldValue? likesFieldValue,
     String title,
-    FieldValue titleFieldValue,
+    FieldValue? titleFieldValue,
     int year,
-    FieldValue yearFieldValue,
+    FieldValue? yearFieldValue,
     String runtime,
-    FieldValue runtimeFieldValue,
+    FieldValue? runtimeFieldValue,
     String rated,
-    FieldValue ratedFieldValue,
+    FieldValue? ratedFieldValue,
     List<String>? genre,
-    FieldValue genreFieldValue,
+    FieldValue? genreFieldValue,
     Set<String>? tags,
-    FieldValue tagsFieldValue,
+    FieldValue? tagsFieldValue,
   });
 
   /// Updates fields in the current document using the batch API.
@@ -182,21 +182,21 @@ abstract class MovieDocumentReference
   void batchUpdate(
     WriteBatch batch, {
     String poster,
-    FieldValue posterFieldValue,
+    FieldValue? posterFieldValue,
     int likes,
-    FieldValue likesFieldValue,
+    FieldValue? likesFieldValue,
     String title,
-    FieldValue titleFieldValue,
+    FieldValue? titleFieldValue,
     int year,
-    FieldValue yearFieldValue,
+    FieldValue? yearFieldValue,
     String runtime,
-    FieldValue runtimeFieldValue,
+    FieldValue? runtimeFieldValue,
     String rated,
-    FieldValue ratedFieldValue,
+    FieldValue? ratedFieldValue,
     List<String>? genre,
-    FieldValue genreFieldValue,
+    FieldValue? genreFieldValue,
     Set<String>? tags,
-    FieldValue tagsFieldValue,
+    FieldValue? tagsFieldValue,
   });
 }
 
@@ -2196,9 +2196,9 @@ abstract class CommentDocumentReference
   /// If no document exists yet, the update will fail.
   Future<void> update({
     String authorName,
-    FieldValue authorNameFieldValue,
+    FieldValue? authorNameFieldValue,
     String message,
-    FieldValue messageFieldValue,
+    FieldValue? messageFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -2207,9 +2207,9 @@ abstract class CommentDocumentReference
   void transactionUpdate(
     Transaction transaction, {
     String authorName,
-    FieldValue authorNameFieldValue,
+    FieldValue? authorNameFieldValue,
     String message,
-    FieldValue messageFieldValue,
+    FieldValue? messageFieldValue,
   });
 
   /// Updates fields in the current document using the batch API.
@@ -2218,9 +2218,9 @@ abstract class CommentDocumentReference
   void batchUpdate(
     WriteBatch batch, {
     String authorName,
-    FieldValue authorNameFieldValue,
+    FieldValue? authorNameFieldValue,
     String message,
-    FieldValue messageFieldValue,
+    FieldValue? messageFieldValue,
   });
 }
 

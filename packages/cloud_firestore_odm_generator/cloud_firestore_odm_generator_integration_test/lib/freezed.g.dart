@@ -130,9 +130,9 @@ abstract class PersonDocumentReference
   /// If no document exists yet, the update will fail.
   Future<void> update({
     String firstName,
-    FieldValue firstNameFieldValue,
+    FieldValue? firstNameFieldValue,
     String lastName,
-    FieldValue lastNameFieldValue,
+    FieldValue? lastNameFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -141,9 +141,9 @@ abstract class PersonDocumentReference
   void transactionUpdate(
     Transaction transaction, {
     String firstName,
-    FieldValue firstNameFieldValue,
+    FieldValue? firstNameFieldValue,
     String lastName,
-    FieldValue lastNameFieldValue,
+    FieldValue? lastNameFieldValue,
   });
 
   /// Updates fields in the current document using the batch API.
@@ -152,9 +152,9 @@ abstract class PersonDocumentReference
   void batchUpdate(
     WriteBatch batch, {
     String firstName,
-    FieldValue firstNameFieldValue,
+    FieldValue? firstNameFieldValue,
     String lastName,
-    FieldValue lastNameFieldValue,
+    FieldValue? lastNameFieldValue,
   });
 }
 
@@ -1137,7 +1137,7 @@ abstract class PublicRedirectedDocumentReference
   /// If no document exists yet, the update will fail.
   Future<void> update({
     String value,
-    FieldValue valueFieldValue,
+    FieldValue? valueFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -1146,7 +1146,7 @@ abstract class PublicRedirectedDocumentReference
   void transactionUpdate(
     Transaction transaction, {
     String value,
-    FieldValue valueFieldValue,
+    FieldValue? valueFieldValue,
   });
 
   /// Updates fields in the current document using the batch API.
@@ -1155,7 +1155,7 @@ abstract class PublicRedirectedDocumentReference
   void batchUpdate(
     WriteBatch batch, {
     String value,
-    FieldValue valueFieldValue,
+    FieldValue? valueFieldValue,
   });
 }
 

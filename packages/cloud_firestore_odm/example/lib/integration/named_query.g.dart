@@ -151,7 +151,7 @@ abstract class ConflictDocumentReference
   /// If no document exists yet, the update will fail.
   Future<void> update({
     num number,
-    FieldValue numberFieldValue,
+    FieldValue? numberFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -160,7 +160,7 @@ abstract class ConflictDocumentReference
   void transactionUpdate(
     Transaction transaction, {
     num number,
-    FieldValue numberFieldValue,
+    FieldValue? numberFieldValue,
   });
 
   /// Updates fields in the current document using the batch API.
@@ -169,7 +169,7 @@ abstract class ConflictDocumentReference
   void batchUpdate(
     WriteBatch batch, {
     num number,
-    FieldValue numberFieldValue,
+    FieldValue? numberFieldValue,
   });
 }
 

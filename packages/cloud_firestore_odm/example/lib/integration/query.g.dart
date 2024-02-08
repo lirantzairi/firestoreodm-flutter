@@ -137,7 +137,7 @@ abstract class DurationQueryDocumentReference
   /// If no document exists yet, the update will fail.
   Future<void> update({
     Duration duration,
-    FieldValue durationFieldValue,
+    FieldValue? durationFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -146,7 +146,7 @@ abstract class DurationQueryDocumentReference
   void transactionUpdate(
     Transaction transaction, {
     Duration duration,
-    FieldValue durationFieldValue,
+    FieldValue? durationFieldValue,
   });
 
   /// Updates fields in the current document using the batch API.
@@ -155,7 +155,7 @@ abstract class DurationQueryDocumentReference
   void batchUpdate(
     WriteBatch batch, {
     Duration duration,
-    FieldValue durationFieldValue,
+    FieldValue? durationFieldValue,
   });
 }
 
@@ -971,7 +971,7 @@ abstract class DateTimeQueryDocumentReference
   /// If no document exists yet, the update will fail.
   Future<void> update({
     DateTime time,
-    FieldValue timeFieldValue,
+    FieldValue? timeFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -980,7 +980,7 @@ abstract class DateTimeQueryDocumentReference
   void transactionUpdate(
     Transaction transaction, {
     DateTime time,
-    FieldValue timeFieldValue,
+    FieldValue? timeFieldValue,
   });
 
   /// Updates fields in the current document using the batch API.
@@ -989,7 +989,7 @@ abstract class DateTimeQueryDocumentReference
   void batchUpdate(
     WriteBatch batch, {
     DateTime time,
-    FieldValue timeFieldValue,
+    FieldValue? timeFieldValue,
   });
 }
 
@@ -1807,7 +1807,7 @@ abstract class TimestampQueryDocumentReference
   /// If no document exists yet, the update will fail.
   Future<void> update({
     Timestamp time,
-    FieldValue timeFieldValue,
+    FieldValue? timeFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -1816,7 +1816,7 @@ abstract class TimestampQueryDocumentReference
   void transactionUpdate(
     Transaction transaction, {
     Timestamp time,
-    FieldValue timeFieldValue,
+    FieldValue? timeFieldValue,
   });
 
   /// Updates fields in the current document using the batch API.
@@ -1825,7 +1825,7 @@ abstract class TimestampQueryDocumentReference
   void batchUpdate(
     WriteBatch batch, {
     Timestamp time,
-    FieldValue timeFieldValue,
+    FieldValue? timeFieldValue,
   });
 }
 
@@ -2644,7 +2644,7 @@ abstract class GeoPointQueryDocumentReference
   /// If no document exists yet, the update will fail.
   Future<void> update({
     GeoPoint point,
-    FieldValue pointFieldValue,
+    FieldValue? pointFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -2653,7 +2653,7 @@ abstract class GeoPointQueryDocumentReference
   void transactionUpdate(
     Transaction transaction, {
     GeoPoint point,
-    FieldValue pointFieldValue,
+    FieldValue? pointFieldValue,
   });
 
   /// Updates fields in the current document using the batch API.
@@ -2662,7 +2662,7 @@ abstract class GeoPointQueryDocumentReference
   void batchUpdate(
     WriteBatch batch, {
     GeoPoint point,
-    FieldValue pointFieldValue,
+    FieldValue? pointFieldValue,
   });
 }
 
@@ -3483,7 +3483,7 @@ abstract class DocumentReferenceQueryDocumentReference
   /// If no document exists yet, the update will fail.
   Future<void> update({
     DocumentReference<Map<String, dynamic>> ref,
-    FieldValue refFieldValue,
+    FieldValue? refFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -3492,7 +3492,7 @@ abstract class DocumentReferenceQueryDocumentReference
   void transactionUpdate(
     Transaction transaction, {
     DocumentReference<Map<String, dynamic>> ref,
-    FieldValue refFieldValue,
+    FieldValue? refFieldValue,
   });
 
   /// Updates fields in the current document using the batch API.
@@ -3501,7 +3501,7 @@ abstract class DocumentReferenceQueryDocumentReference
   void batchUpdate(
     WriteBatch batch, {
     DocumentReference<Map<String, dynamic>> ref,
-    FieldValue refFieldValue,
+    FieldValue? refFieldValue,
   });
 }
 

@@ -74,7 +74,7 @@ class _\$${data.documentReferenceName}
       for (final field in data.updatableFields)
         if (field.updatable) ...[
           '${field.type.getDisplayString(withNullability: true)} ${field.name},',
-          'FieldValue ${field.name}FieldValue,',
+          'FieldValue? ${field.name}FieldValue,',
         ],
     ];
 

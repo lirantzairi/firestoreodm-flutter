@@ -135,9 +135,9 @@ abstract class AdvancedJsonDocumentReference extends FirestoreDocumentReference<
   /// If no document exists yet, the update will fail.
   Future<void> update({
     String? firstName,
-    FieldValue firstNameFieldValue,
+    FieldValue? firstNameFieldValue,
     String? lastName,
-    FieldValue lastNameFieldValue,
+    FieldValue? lastNameFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -146,9 +146,9 @@ abstract class AdvancedJsonDocumentReference extends FirestoreDocumentReference<
   void transactionUpdate(
     Transaction transaction, {
     String? firstName,
-    FieldValue firstNameFieldValue,
+    FieldValue? firstNameFieldValue,
     String? lastName,
-    FieldValue lastNameFieldValue,
+    FieldValue? lastNameFieldValue,
   });
 
   /// Updates fields in the current document using the batch API.
@@ -157,9 +157,9 @@ abstract class AdvancedJsonDocumentReference extends FirestoreDocumentReference<
   void batchUpdate(
     WriteBatch batch, {
     String? firstName,
-    FieldValue firstNameFieldValue,
+    FieldValue? firstNameFieldValue,
     String? lastName,
-    FieldValue lastNameFieldValue,
+    FieldValue? lastNameFieldValue,
   });
 }
 
@@ -1155,9 +1155,9 @@ abstract class _PrivateAdvancedJsonDocumentReference
   /// If no document exists yet, the update will fail.
   Future<void> update({
     String? firstName,
-    FieldValue firstNameFieldValue,
+    FieldValue? firstNameFieldValue,
     String? lastName,
-    FieldValue lastNameFieldValue,
+    FieldValue? lastNameFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -1166,9 +1166,9 @@ abstract class _PrivateAdvancedJsonDocumentReference
   void transactionUpdate(
     Transaction transaction, {
     String? firstName,
-    FieldValue firstNameFieldValue,
+    FieldValue? firstNameFieldValue,
     String? lastName,
-    FieldValue lastNameFieldValue,
+    FieldValue? lastNameFieldValue,
   });
 
   /// Updates fields in the current document using the batch API.
@@ -1177,9 +1177,9 @@ abstract class _PrivateAdvancedJsonDocumentReference
   void batchUpdate(
     WriteBatch batch, {
     String? firstName,
-    FieldValue firstNameFieldValue,
+    FieldValue? firstNameFieldValue,
     String? lastName,
-    FieldValue lastNameFieldValue,
+    FieldValue? lastNameFieldValue,
   });
 }
 
