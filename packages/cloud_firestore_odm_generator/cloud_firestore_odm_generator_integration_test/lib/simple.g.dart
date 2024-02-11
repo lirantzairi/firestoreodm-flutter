@@ -43,6 +43,13 @@ abstract class IgnoredGetterCollectionReference
     return _$IgnoredGetterToJson(value);
   }
 
+  static Query<IgnoredGetter> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('getter')
+      .withConverter<IgnoredGetter>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
+
   @override
   CollectionReference<IgnoredGetter> get reference;
 
@@ -874,6 +881,12 @@ abstract class ModelCollectionReference
     return _$ModelToJson(value);
   }
 
+  static Query<Model> get collectionGroup =>
+      FirebaseFirestore.instance.collectionGroup('root').withConverter<Model>(
+            fromFirestore: fromFirestore,
+            toFirestore: toFirestore,
+          );
+
   @override
   CollectionReference<Model> get reference;
 
@@ -1683,6 +1696,13 @@ abstract class NestedCollectionReference
   ) {
     return value.toJson();
   }
+
+  static Query<Nested> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('nested')
+      .withConverter<Nested>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
 
   @override
   CollectionReference<Nested> get reference;
@@ -4724,6 +4744,13 @@ abstract class EmptyModelCollectionReference
     return value.toJson();
   }
 
+  static Query<EmptyModel> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('config')
+      .withConverter<EmptyModel>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
+
   @override
   CollectionReference<EmptyModel> get reference;
 
@@ -5321,6 +5348,13 @@ abstract class OptionalJsonCollectionReference
   ) {
     return _$OptionalJsonToJson(value);
   }
+
+  static Query<OptionalJson> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('root')
+      .withConverter<OptionalJson>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
 
   @override
   CollectionReference<OptionalJson> get reference;
@@ -6151,6 +6185,13 @@ abstract class MixedJsonCollectionReference
     return value.toJson();
   }
 
+  static Query<MixedJson> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('root')
+      .withConverter<MixedJson>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
+
   @override
   CollectionReference<MixedJson> get reference;
 
@@ -6970,6 +7011,12 @@ abstract class RootCollectionReference
   ) {
     return value.toJson();
   }
+
+  static Query<Root> get collectionGroup =>
+      FirebaseFirestore.instance.collectionGroup('root').withConverter<Root>(
+            fromFirestore: fromFirestore,
+            toFirestore: toFirestore,
+          );
 
   @override
   CollectionReference<Root> get reference;
@@ -8000,6 +8047,12 @@ abstract class SubCollectionReference
     return value.toJson();
   }
 
+  static Query<Sub> get collectionGroup =>
+      FirebaseFirestore.instance.collectionGroup('sub').withConverter<Sub>(
+            fromFirestore: fromFirestore,
+            toFirestore: toFirestore,
+          );
+
   @override
   CollectionReference<Sub> get reference;
 
@@ -9011,6 +9064,13 @@ abstract class AsCamelCaseCollectionReference
     return value.toJson();
   }
 
+  static Query<AsCamelCase> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('asCamelCase')
+      .withConverter<AsCamelCase>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
+
   @override
   CollectionReference<AsCamelCase> get reference;
 
@@ -9857,6 +9917,13 @@ abstract class CustomSubNameCollectionReference
   ) {
     return value.toJson();
   }
+
+  static Query<CustomSubName> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('thisIsACustomName')
+      .withConverter<CustomSubName>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
 
   @override
   CollectionReference<CustomSubName> get reference;
@@ -10707,6 +10774,14 @@ abstract class ThisIsACustomPrefixCollectionReference
   ) {
     return value.toJson();
   }
+
+  static Query<CustomClassPrefix> get collectionGroup =>
+      FirebaseFirestore.instance
+          .collectionGroup('customClassPrefix')
+          .withConverter<CustomClassPrefix>(
+            fromFirestore: fromFirestore,
+            toFirestore: toFirestore,
+          );
 
   @override
   CollectionReference<CustomClassPrefix> get reference;
@@ -11568,6 +11643,13 @@ abstract class ExplicitPathCollectionReference
     return value.toJson();
   }
 
+  static Query<ExplicitPath> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('path')
+      .withConverter<ExplicitPath>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
+
   @override
   CollectionReference<ExplicitPath> get reference;
 
@@ -12407,6 +12489,14 @@ abstract class ExplicitSubPathCollectionReference
   ) {
     return value.toJson();
   }
+
+  static Query<ExplicitSubPath> get collectionGroup =>
+      FirebaseFirestore.instance
+          .collectionGroup('sub')
+          .withConverter<ExplicitSubPath>(
+            fromFirestore: fromFirestore,
+            toFirestore: toFirestore,
+          );
 
   @override
   CollectionReference<ExplicitSubPath> get reference;

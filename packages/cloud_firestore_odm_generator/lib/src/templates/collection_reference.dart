@@ -49,6 +49,12 @@ abstract class ${data.collectionReferenceInterfaceName}
     $toFirestoreBody
   }
 
+  static Query<${data.type}> get collectionGroup =>
+      FirebaseFirestore.instance.collectionGroup('${data.collectionName}').withConverter<${data.type}>(
+            fromFirestore: fromFirestore,
+            toFirestore: toFirestore,
+          );
+
   @override
   CollectionReference<${data.type}> get reference;
 

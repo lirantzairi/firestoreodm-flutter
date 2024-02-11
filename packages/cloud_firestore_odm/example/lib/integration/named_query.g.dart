@@ -61,6 +61,13 @@ abstract class ConflictCollectionReference
     return _$ConflictToJson(value);
   }
 
+  static Query<Conflict> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('namedQueryConflict')
+      .withConverter<Conflict>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
+
   @override
   CollectionReference<Conflict> get reference;
 

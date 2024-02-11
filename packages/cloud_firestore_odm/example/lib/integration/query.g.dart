@@ -45,6 +45,13 @@ abstract class DurationQueryCollectionReference
     return _$DurationQueryToJson(value);
   }
 
+  static Query<DurationQuery> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('duration')
+      .withConverter<DurationQuery>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
+
   @override
   CollectionReference<DurationQuery> get reference;
 
@@ -879,6 +886,13 @@ abstract class DateTimeQueryCollectionReference
     return _$DateTimeQueryToJson(value);
   }
 
+  static Query<DateTimeQuery> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('dateTime')
+      .withConverter<DateTimeQuery>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
+
   @override
   CollectionReference<DateTimeQuery> get reference;
 
@@ -1712,6 +1726,13 @@ abstract class TimestampQueryCollectionReference
   ) {
     return _$TimestampQueryToJson(value);
   }
+
+  static Query<TimestampQuery> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('timestampTime')
+      .withConverter<TimestampQuery>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
 
   @override
   CollectionReference<TimestampQuery> get reference;
@@ -2550,6 +2571,13 @@ abstract class GeoPointQueryCollectionReference
     return _$GeoPointQueryToJson(value);
   }
 
+  static Query<GeoPointQuery> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('geopointTime')
+      .withConverter<GeoPointQuery>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
+
   @override
   CollectionReference<GeoPointQuery> get reference;
 
@@ -3385,6 +3413,14 @@ abstract class DocumentReferenceQueryCollectionReference
   ) {
     return _$DocumentReferenceQueryToJson(value);
   }
+
+  static Query<DocumentReferenceQuery> get collectionGroup =>
+      FirebaseFirestore.instance
+          .collectionGroup('docRef')
+          .withConverter<DocumentReferenceQuery>(
+            fromFirestore: fromFirestore,
+            toFirestore: toFirestore,
+          );
 
   @override
   CollectionReference<DocumentReferenceQuery> get reference;

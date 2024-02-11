@@ -44,6 +44,13 @@ abstract class AdvancedJsonCollectionReference
     return value.toJson();
   }
 
+  static Query<AdvancedJson> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('advanced')
+      .withConverter<AdvancedJson>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
+
   @override
   CollectionReference<AdvancedJson> get reference;
 
@@ -1056,6 +1063,14 @@ abstract class _PrivateAdvancedJsonCollectionReference
   ) {
     return value.toJson();
   }
+
+  static Query<_PrivateAdvancedJson> get collectionGroup =>
+      FirebaseFirestore.instance
+          .collectionGroup('privateAdvanced')
+          .withConverter<_PrivateAdvancedJson>(
+            fromFirestore: fromFirestore,
+            toFirestore: toFirestore,
+          );
 
   @override
   CollectionReference<_PrivateAdvancedJson> get reference;
@@ -2096,6 +2111,13 @@ abstract class EmptyModelCollectionReference
   ) {
     return value.toJson();
   }
+
+  static Query<EmptyModel> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('config')
+      .withConverter<EmptyModel>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
 
   @override
   CollectionReference<EmptyModel> get reference;

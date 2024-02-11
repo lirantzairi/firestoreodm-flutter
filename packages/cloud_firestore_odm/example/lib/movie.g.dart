@@ -44,6 +44,13 @@ abstract class MovieCollectionReference
     return {..._$MovieToJson(value)}..remove('id');
   }
 
+  static Query<Movie> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('firestoreExampleApp')
+      .withConverter<Movie>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
+
   @override
   CollectionReference<Movie> get reference;
 
@@ -2094,6 +2101,13 @@ abstract class CommentCollectionReference
   ) {
     return _$CommentToJson(value);
   }
+
+  static Query<Comment> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('comments')
+      .withConverter<Comment>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
 
   @override
   CollectionReference<Comment> get reference;

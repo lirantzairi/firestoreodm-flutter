@@ -44,6 +44,13 @@ abstract class EnumsCollectionReference
     return value.toJson();
   }
 
+  static Query<Enums> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('firestoreExampleApp')
+      .withConverter<Enums>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
+
   @override
   CollectionReference<Enums> get reference;
 

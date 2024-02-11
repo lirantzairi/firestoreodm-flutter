@@ -44,6 +44,13 @@ abstract class PersonCollectionReference
     return value.toJson();
   }
 
+  static Query<Person> get collectionGroup => FirebaseFirestore.instance
+      .collectionGroup('freezedTest')
+      .withConverter<Person>(
+        fromFirestore: fromFirestore,
+        toFirestore: toFirestore,
+      );
+
   @override
   CollectionReference<Person> get reference;
 
@@ -1045,6 +1052,14 @@ abstract class PublicRedirectedCollectionReference
   ) {
     return value.toJson();
   }
+
+  static Query<PublicRedirected> get collectionGroup =>
+      FirebaseFirestore.instance
+          .collectionGroup('freezedTest')
+          .withConverter<PublicRedirected>(
+            fromFirestore: fromFirestore,
+            toFirestore: toFirestore,
+          );
 
   @override
   CollectionReference<PublicRedirected> get reference;
