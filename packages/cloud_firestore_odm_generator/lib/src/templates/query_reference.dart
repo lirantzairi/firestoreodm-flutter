@@ -7,6 +7,19 @@ import 'package:analyzer/dart/element/type.dart';
 import 'package:analyzer/dart/element/type_provider.dart';
 
 import '../collection_data.dart';
+import '../collection_generator.dart';
+
+class _FilterOperator {
+  const _FilterOperator({
+    required this.name,
+    required this.type,
+    required this.mapper,
+  });
+
+  final String name;
+  final String type;
+  final String Function(String) mapper;
+}
 
 class _WherePrototype {
   _WherePrototype({
@@ -30,6 +43,12 @@ class _WhereMapper {
 
   final _WherePrototype prototype;
   final String Function(String name) map;
+}
+
+extension on QueryingField {
+  String get iterableType {
+    return (type as InterfaceType).typeArguments.first.toString();
+  }
 }
 
 class QueryTemplate {
@@ -99,6 +118,8 @@ class ${data.queryReferenceImplName}
 
   ${_equalAndHashCode(data)}
 }
+
+${_firestoreFilter()}
 ''';
   }
 
@@ -322,10 +343,7 @@ class ${data.queryReferenceImplName}
             map: (name) {
               final itemType = field.name == 'fieldPath'
                   ? field.type.toString()
-                  : (field.type as InterfaceType)
-                      .typeArguments
-                      .first
-                      .toString();
+                  : field.iterableType;
               final cast = itemType != 'Object?' ? ' as $itemType' : '';
 
               var transform = '$name != null ? ($perFieldToJson(';
@@ -388,6 +406,28 @@ ${data.queryReferenceInterfaceName} where$titledNamed($positionalFields {$protot
       }
     }
 
+    if (isAbstract) {
+      buffer.writeln(
+        '''
+
+${data.queryReferenceInterfaceName} whereFirestoreFilter(Filter filter);
+''',
+      );
+    } else {
+      buffer.writeln(
+        '''
+
+  ${data.queryReferenceInterfaceName} whereFirestoreFilter(Filter filter) {
+    return ${data.queryReferenceImplName}(
+      _collection,
+      \$referenceWithoutCursor: \$referenceWithoutCursor.where(filter),
+      \$queryCursor: \$queryCursor,
+    );
+  }
+''',
+      );
+    }
+
     return buffer.toString();
   }
 
@@ -407,6 +447,128 @@ ${data.queryReferenceInterfaceName} where$titledNamed($positionalFields {$protot
   @override
   int get hashCode => Object.hash(${propertyNames.join(', ')});
 ''';
+  }
+
+  String _firestoreFilter() {
+    final buffer = StringBuffer();
+
+    final classPrefix = data.classPrefix;
+    final filterClassName = '${classPrefix}Filter';
+
+    buffer.writeln(
+      '''
+class $filterClassName {
+  $filterClassName._();
+
+  ${_firestoreFilterFieldsConstructors()}
+}
+''',
+    );
+
+    return buffer.toString();
+  }
+
+  String _firestoreFilterFieldsConstructors() {
+    final buffer = StringBuffer();
+
+    for (final field in data.queryableFields) {
+      final name = field.name;
+      if (name == 'documentId' || name == 'fieldPath') {
+        continue;
+      }
+
+      final perFieldToJson = data.perFieldToJson(field.name);
+      String valueToJson(String name) => '$perFieldToJson($name)';
+      String equalToMapper(String name) =>
+          'value == null ? null : ${valueToJson('value')}';
+      String iterableMapper(String name) =>
+          'value.map((e) => e == null ? null : ${valueToJson('e')})';
+      String boolMapper(String name) => 'value';
+
+      final fieldType =
+          field.type.nullabilitySuffix == NullabilitySuffix.question
+              ? '${field.type}'
+              : '${field.type}?';
+
+      final operators = [
+        _FilterOperator(
+          name: 'isEqualTo',
+          type: fieldType,
+          mapper: equalToMapper,
+        ),
+        _FilterOperator(
+          name: 'isNotEqualTo',
+          type: fieldType,
+          mapper: equalToMapper,
+        ),
+        _FilterOperator(
+          name: 'isLessThan',
+          type: fieldType,
+          mapper: equalToMapper,
+        ),
+        _FilterOperator(
+          name: 'isLessThanOrEqualTo',
+          type: fieldType,
+          mapper: equalToMapper,
+        ),
+        _FilterOperator(
+          name: 'isGreaterThan',
+          type: fieldType,
+          mapper: equalToMapper,
+        ),
+        _FilterOperator(
+          name: 'isGreaterThanOrEqualTo',
+          type: fieldType,
+          mapper: equalToMapper,
+        ),
+        if (field.type.isSupportedIterable) ...[
+          _FilterOperator(
+            name: 'arrayContains',
+            type: field.iterableType,
+            mapper: (value) {
+              var transform = '($perFieldToJson(';
+              if (field.type.isSet) {
+                transform += '{value}';
+              } else {
+                transform += '[value]';
+              }
+              return '$transform) as List?)!.single';
+            },
+          ),
+          _FilterOperator(
+            name: 'arrayContainsAny',
+            type: 'Iterable<$fieldType>',
+            mapper: iterableMapper,
+          ),
+        ] else ...[
+          _FilterOperator(
+            name: 'whereIn',
+            type: 'Iterable<$fieldType>',
+            mapper: iterableMapper,
+          ),
+          _FilterOperator(
+            name: 'whereNotIn',
+            type: 'Iterable<$fieldType>',
+            mapper: iterableMapper,
+          ),
+        ],
+        _FilterOperator(name: 'isNull', type: 'bool', mapper: boolMapper),
+      ];
+
+      for (final operator in operators) {
+        final nameSuffix = operator.name.replaceFirstMapped(
+          RegExp('[a-zA-Z]'),
+          (match) => match.group(0)!.toUpperCase(),
+        );
+
+        buffer.writeln('''
+  static Filter $name$nameSuffix(${operator.type} value) => 
+      Filter(${field.field}, ${operator.name}: ${operator.mapper('value')});
+''');
+      }
+    }
+
+    return buffer.toString();
   }
 }
 

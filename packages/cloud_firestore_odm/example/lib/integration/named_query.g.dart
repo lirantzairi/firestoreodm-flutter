@@ -343,6 +343,8 @@ abstract class ConflictQuery
     bool? isNull,
   });
 
+  ConflictQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -547,6 +549,14 @@ class _$ConflictQuery extends QueryReference<Conflict, ConflictQuerySnapshot>
         whereNotIn: whereNotIn?.map((e) => _$ConflictPerFieldToJson.number(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  ConflictQuery whereFirestoreFilter(Filter filter) {
+    return _$ConflictQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -780,6 +790,52 @@ class _$ConflictQuery extends QueryReference<Conflict, ConflictQuerySnapshot>
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class ConflictFilter {
+  ConflictFilter._();
+
+  static Filter numberIsEqualTo(num? value) => Filter(
+      _$ConflictFieldMap['number']!,
+      isEqualTo: value == null ? null : _$ConflictPerFieldToJson.number(value));
+
+  static Filter numberIsNotEqualTo(num? value) =>
+      Filter(_$ConflictFieldMap['number']!,
+          isNotEqualTo:
+              value == null ? null : _$ConflictPerFieldToJson.number(value));
+
+  static Filter numberIsLessThan(num? value) =>
+      Filter(_$ConflictFieldMap['number']!,
+          isLessThan:
+              value == null ? null : _$ConflictPerFieldToJson.number(value));
+
+  static Filter numberIsLessThanOrEqualTo(num? value) =>
+      Filter(_$ConflictFieldMap['number']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$ConflictPerFieldToJson.number(value));
+
+  static Filter numberIsGreaterThan(num? value) =>
+      Filter(_$ConflictFieldMap['number']!,
+          isGreaterThan:
+              value == null ? null : _$ConflictPerFieldToJson.number(value));
+
+  static Filter numberIsGreaterThanOrEqualTo(num? value) =>
+      Filter(_$ConflictFieldMap['number']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$ConflictPerFieldToJson.number(value));
+
+  static Filter numberWhereIn(Iterable<num?> value) => Filter(
+      _$ConflictFieldMap['number']!,
+      whereIn: value
+          .map((e) => e == null ? null : _$ConflictPerFieldToJson.number(e)));
+
+  static Filter numberWhereNotIn(Iterable<num?> value) => Filter(
+      _$ConflictFieldMap['number']!,
+      whereNotIn: value
+          .map((e) => e == null ? null : _$ConflictPerFieldToJson.number(e)));
+
+  static Filter numberIsNull(bool value) =>
+      Filter(_$ConflictFieldMap['number']!, isNull: value);
 }
 
 class ConflictDocumentSnapshot extends FirestoreDocumentSnapshot<Conflict> {

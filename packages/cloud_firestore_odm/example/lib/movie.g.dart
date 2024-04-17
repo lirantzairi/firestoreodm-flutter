@@ -658,6 +658,8 @@ abstract class MovieQuery implements QueryReference<Movie, MovieQuerySnapshot> {
     bool? isNull,
   });
 
+  MovieQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -1249,6 +1251,14 @@ class _$MovieQuery extends QueryReference<Movie, MovieQuerySnapshot>
             : null,
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  MovieQuery whereFirestoreFilter(Filter filter) {
+    return _$MovieQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -1995,6 +2005,318 @@ class _$MovieQuery extends QueryReference<Movie, MovieQuerySnapshot>
   int get hashCode => Object.hash(runtimeType, reference);
 }
 
+class MovieFilter {
+  MovieFilter._();
+
+  static Filter posterIsEqualTo(String? value) => Filter(
+      _$MovieFieldMap['poster']!,
+      isEqualTo: value == null ? null : _$MoviePerFieldToJson.poster(value));
+
+  static Filter posterIsNotEqualTo(String? value) => Filter(
+      _$MovieFieldMap['poster']!,
+      isNotEqualTo: value == null ? null : _$MoviePerFieldToJson.poster(value));
+
+  static Filter posterIsLessThan(String? value) => Filter(
+      _$MovieFieldMap['poster']!,
+      isLessThan: value == null ? null : _$MoviePerFieldToJson.poster(value));
+
+  static Filter posterIsLessThanOrEqualTo(String? value) =>
+      Filter(_$MovieFieldMap['poster']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.poster(value));
+
+  static Filter posterIsGreaterThan(String? value) =>
+      Filter(_$MovieFieldMap['poster']!,
+          isGreaterThan:
+              value == null ? null : _$MoviePerFieldToJson.poster(value));
+
+  static Filter posterIsGreaterThanOrEqualTo(String? value) =>
+      Filter(_$MovieFieldMap['poster']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.poster(value));
+
+  static Filter posterWhereIn(Iterable<String?> value) => Filter(
+      _$MovieFieldMap['poster']!,
+      whereIn:
+          value.map((e) => e == null ? null : _$MoviePerFieldToJson.poster(e)));
+
+  static Filter posterWhereNotIn(Iterable<String?> value) => Filter(
+      _$MovieFieldMap['poster']!,
+      whereNotIn:
+          value.map((e) => e == null ? null : _$MoviePerFieldToJson.poster(e)));
+
+  static Filter posterIsNull(bool value) =>
+      Filter(_$MovieFieldMap['poster']!, isNull: value);
+
+  static Filter likesIsEqualTo(int? value) => Filter(_$MovieFieldMap['likes']!,
+      isEqualTo: value == null ? null : _$MoviePerFieldToJson.likes(value));
+
+  static Filter likesIsNotEqualTo(int? value) => Filter(
+      _$MovieFieldMap['likes']!,
+      isNotEqualTo: value == null ? null : _$MoviePerFieldToJson.likes(value));
+
+  static Filter likesIsLessThan(int? value) => Filter(_$MovieFieldMap['likes']!,
+      isLessThan: value == null ? null : _$MoviePerFieldToJson.likes(value));
+
+  static Filter likesIsLessThanOrEqualTo(int? value) =>
+      Filter(_$MovieFieldMap['likes']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.likes(value));
+
+  static Filter likesIsGreaterThan(int? value) => Filter(
+      _$MovieFieldMap['likes']!,
+      isGreaterThan: value == null ? null : _$MoviePerFieldToJson.likes(value));
+
+  static Filter likesIsGreaterThanOrEqualTo(int? value) =>
+      Filter(_$MovieFieldMap['likes']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.likes(value));
+
+  static Filter likesWhereIn(Iterable<int?> value) => Filter(
+      _$MovieFieldMap['likes']!,
+      whereIn:
+          value.map((e) => e == null ? null : _$MoviePerFieldToJson.likes(e)));
+
+  static Filter likesWhereNotIn(Iterable<int?> value) => Filter(
+      _$MovieFieldMap['likes']!,
+      whereNotIn:
+          value.map((e) => e == null ? null : _$MoviePerFieldToJson.likes(e)));
+
+  static Filter likesIsNull(bool value) =>
+      Filter(_$MovieFieldMap['likes']!, isNull: value);
+
+  static Filter titleIsEqualTo(String? value) =>
+      Filter(_$MovieFieldMap['title']!,
+          isEqualTo: value == null ? null : _$MoviePerFieldToJson.title(value));
+
+  static Filter titleIsNotEqualTo(String? value) => Filter(
+      _$MovieFieldMap['title']!,
+      isNotEqualTo: value == null ? null : _$MoviePerFieldToJson.title(value));
+
+  static Filter titleIsLessThan(String? value) => Filter(
+      _$MovieFieldMap['title']!,
+      isLessThan: value == null ? null : _$MoviePerFieldToJson.title(value));
+
+  static Filter titleIsLessThanOrEqualTo(String? value) =>
+      Filter(_$MovieFieldMap['title']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.title(value));
+
+  static Filter titleIsGreaterThan(String? value) => Filter(
+      _$MovieFieldMap['title']!,
+      isGreaterThan: value == null ? null : _$MoviePerFieldToJson.title(value));
+
+  static Filter titleIsGreaterThanOrEqualTo(String? value) =>
+      Filter(_$MovieFieldMap['title']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.title(value));
+
+  static Filter titleWhereIn(Iterable<String?> value) => Filter(
+      _$MovieFieldMap['title']!,
+      whereIn:
+          value.map((e) => e == null ? null : _$MoviePerFieldToJson.title(e)));
+
+  static Filter titleWhereNotIn(Iterable<String?> value) => Filter(
+      _$MovieFieldMap['title']!,
+      whereNotIn:
+          value.map((e) => e == null ? null : _$MoviePerFieldToJson.title(e)));
+
+  static Filter titleIsNull(bool value) =>
+      Filter(_$MovieFieldMap['title']!, isNull: value);
+
+  static Filter yearIsEqualTo(int? value) => Filter(_$MovieFieldMap['year']!,
+      isEqualTo: value == null ? null : _$MoviePerFieldToJson.year(value));
+
+  static Filter yearIsNotEqualTo(int? value) => Filter(_$MovieFieldMap['year']!,
+      isNotEqualTo: value == null ? null : _$MoviePerFieldToJson.year(value));
+
+  static Filter yearIsLessThan(int? value) => Filter(_$MovieFieldMap['year']!,
+      isLessThan: value == null ? null : _$MoviePerFieldToJson.year(value));
+
+  static Filter yearIsLessThanOrEqualTo(int? value) =>
+      Filter(_$MovieFieldMap['year']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.year(value));
+
+  static Filter yearIsGreaterThan(int? value) => Filter(
+      _$MovieFieldMap['year']!,
+      isGreaterThan: value == null ? null : _$MoviePerFieldToJson.year(value));
+
+  static Filter yearIsGreaterThanOrEqualTo(int? value) =>
+      Filter(_$MovieFieldMap['year']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.year(value));
+
+  static Filter yearWhereIn(Iterable<int?> value) => Filter(
+      _$MovieFieldMap['year']!,
+      whereIn:
+          value.map((e) => e == null ? null : _$MoviePerFieldToJson.year(e)));
+
+  static Filter yearWhereNotIn(Iterable<int?> value) => Filter(
+      _$MovieFieldMap['year']!,
+      whereNotIn:
+          value.map((e) => e == null ? null : _$MoviePerFieldToJson.year(e)));
+
+  static Filter yearIsNull(bool value) =>
+      Filter(_$MovieFieldMap['year']!, isNull: value);
+
+  static Filter runtimeIsEqualTo(String? value) => Filter(
+      _$MovieFieldMap['runtime']!,
+      isEqualTo: value == null ? null : _$MoviePerFieldToJson.runtime(value));
+
+  static Filter runtimeIsNotEqualTo(String? value) =>
+      Filter(_$MovieFieldMap['runtime']!,
+          isNotEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.runtime(value));
+
+  static Filter runtimeIsLessThan(String? value) => Filter(
+      _$MovieFieldMap['runtime']!,
+      isLessThan: value == null ? null : _$MoviePerFieldToJson.runtime(value));
+
+  static Filter runtimeIsLessThanOrEqualTo(String? value) =>
+      Filter(_$MovieFieldMap['runtime']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.runtime(value));
+
+  static Filter runtimeIsGreaterThan(String? value) =>
+      Filter(_$MovieFieldMap['runtime']!,
+          isGreaterThan:
+              value == null ? null : _$MoviePerFieldToJson.runtime(value));
+
+  static Filter runtimeIsGreaterThanOrEqualTo(String? value) =>
+      Filter(_$MovieFieldMap['runtime']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.runtime(value));
+
+  static Filter runtimeWhereIn(Iterable<String?> value) =>
+      Filter(_$MovieFieldMap['runtime']!,
+          whereIn: value
+              .map((e) => e == null ? null : _$MoviePerFieldToJson.runtime(e)));
+
+  static Filter runtimeWhereNotIn(Iterable<String?> value) =>
+      Filter(_$MovieFieldMap['runtime']!,
+          whereNotIn: value
+              .map((e) => e == null ? null : _$MoviePerFieldToJson.runtime(e)));
+
+  static Filter runtimeIsNull(bool value) =>
+      Filter(_$MovieFieldMap['runtime']!, isNull: value);
+
+  static Filter ratedIsEqualTo(String? value) =>
+      Filter(_$MovieFieldMap['rated']!,
+          isEqualTo: value == null ? null : _$MoviePerFieldToJson.rated(value));
+
+  static Filter ratedIsNotEqualTo(String? value) => Filter(
+      _$MovieFieldMap['rated']!,
+      isNotEqualTo: value == null ? null : _$MoviePerFieldToJson.rated(value));
+
+  static Filter ratedIsLessThan(String? value) => Filter(
+      _$MovieFieldMap['rated']!,
+      isLessThan: value == null ? null : _$MoviePerFieldToJson.rated(value));
+
+  static Filter ratedIsLessThanOrEqualTo(String? value) =>
+      Filter(_$MovieFieldMap['rated']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.rated(value));
+
+  static Filter ratedIsGreaterThan(String? value) => Filter(
+      _$MovieFieldMap['rated']!,
+      isGreaterThan: value == null ? null : _$MoviePerFieldToJson.rated(value));
+
+  static Filter ratedIsGreaterThanOrEqualTo(String? value) =>
+      Filter(_$MovieFieldMap['rated']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.rated(value));
+
+  static Filter ratedWhereIn(Iterable<String?> value) => Filter(
+      _$MovieFieldMap['rated']!,
+      whereIn:
+          value.map((e) => e == null ? null : _$MoviePerFieldToJson.rated(e)));
+
+  static Filter ratedWhereNotIn(Iterable<String?> value) => Filter(
+      _$MovieFieldMap['rated']!,
+      whereNotIn:
+          value.map((e) => e == null ? null : _$MoviePerFieldToJson.rated(e)));
+
+  static Filter ratedIsNull(bool value) =>
+      Filter(_$MovieFieldMap['rated']!, isNull: value);
+
+  static Filter genreIsEqualTo(List<String>? value) =>
+      Filter(_$MovieFieldMap['genre']!,
+          isEqualTo: value == null ? null : _$MoviePerFieldToJson.genre(value));
+
+  static Filter genreIsNotEqualTo(List<String>? value) => Filter(
+      _$MovieFieldMap['genre']!,
+      isNotEqualTo: value == null ? null : _$MoviePerFieldToJson.genre(value));
+
+  static Filter genreIsLessThan(List<String>? value) => Filter(
+      _$MovieFieldMap['genre']!,
+      isLessThan: value == null ? null : _$MoviePerFieldToJson.genre(value));
+
+  static Filter genreIsLessThanOrEqualTo(List<String>? value) =>
+      Filter(_$MovieFieldMap['genre']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.genre(value));
+
+  static Filter genreIsGreaterThan(List<String>? value) => Filter(
+      _$MovieFieldMap['genre']!,
+      isGreaterThan: value == null ? null : _$MoviePerFieldToJson.genre(value));
+
+  static Filter genreIsGreaterThanOrEqualTo(List<String>? value) =>
+      Filter(_$MovieFieldMap['genre']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.genre(value));
+
+  static Filter genreArrayContains(String value) => Filter(
+      _$MovieFieldMap['genre']!,
+      arrayContains: (_$MoviePerFieldToJson.genre([value]) as List?)!.single);
+
+  static Filter genreArrayContainsAny(Iterable<List<String>?> value) => Filter(
+      _$MovieFieldMap['genre']!,
+      arrayContainsAny:
+          value.map((e) => e == null ? null : _$MoviePerFieldToJson.genre(e)));
+
+  static Filter genreIsNull(bool value) =>
+      Filter(_$MovieFieldMap['genre']!, isNull: value);
+
+  static Filter tagsIsEqualTo(Set<String>? value) =>
+      Filter(_$MovieFieldMap['tags']!,
+          isEqualTo: value == null ? null : _$MoviePerFieldToJson.tags(value));
+
+  static Filter tagsIsNotEqualTo(Set<String>? value) => Filter(
+      _$MovieFieldMap['tags']!,
+      isNotEqualTo: value == null ? null : _$MoviePerFieldToJson.tags(value));
+
+  static Filter tagsIsLessThan(Set<String>? value) =>
+      Filter(_$MovieFieldMap['tags']!,
+          isLessThan: value == null ? null : _$MoviePerFieldToJson.tags(value));
+
+  static Filter tagsIsLessThanOrEqualTo(Set<String>? value) =>
+      Filter(_$MovieFieldMap['tags']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.tags(value));
+
+  static Filter tagsIsGreaterThan(Set<String>? value) => Filter(
+      _$MovieFieldMap['tags']!,
+      isGreaterThan: value == null ? null : _$MoviePerFieldToJson.tags(value));
+
+  static Filter tagsIsGreaterThanOrEqualTo(Set<String>? value) =>
+      Filter(_$MovieFieldMap['tags']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$MoviePerFieldToJson.tags(value));
+
+  static Filter tagsArrayContains(String value) => Filter(
+      _$MovieFieldMap['tags']!,
+      arrayContains: (_$MoviePerFieldToJson.tags({value}) as List?)!.single);
+
+  static Filter tagsArrayContainsAny(Iterable<Set<String>?> value) => Filter(
+      _$MovieFieldMap['tags']!,
+      arrayContainsAny:
+          value.map((e) => e == null ? null : _$MoviePerFieldToJson.tags(e)));
+
+  static Filter tagsIsNull(bool value) =>
+      Filter(_$MovieFieldMap['tags']!, isNull: value);
+}
+
 class MovieDocumentSnapshot extends FirestoreDocumentSnapshot<Movie> {
   MovieDocumentSnapshot._(this.snapshot) : data = snapshot.data();
 
@@ -2451,6 +2773,8 @@ abstract class CommentQuery
     bool? isNull,
   });
 
+  CommentQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -2709,6 +3033,14 @@ class _$CommentQuery extends QueryReference<Comment, CommentQuerySnapshot>
         whereNotIn: whereNotIn?.map((e) => _$CommentPerFieldToJson.message(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  CommentQuery whereFirestoreFilter(Filter filter) {
+    return _$CommentQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -3015,6 +3347,95 @@ class _$CommentQuery extends QueryReference<Comment, CommentQuerySnapshot>
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class CommentFilter {
+  CommentFilter._();
+
+  static Filter authorNameIsEqualTo(String? value) =>
+      Filter(_$CommentFieldMap['authorName']!,
+          isEqualTo:
+              value == null ? null : _$CommentPerFieldToJson.authorName(value));
+
+  static Filter authorNameIsNotEqualTo(String? value) =>
+      Filter(_$CommentFieldMap['authorName']!,
+          isNotEqualTo:
+              value == null ? null : _$CommentPerFieldToJson.authorName(value));
+
+  static Filter authorNameIsLessThan(String? value) =>
+      Filter(_$CommentFieldMap['authorName']!,
+          isLessThan:
+              value == null ? null : _$CommentPerFieldToJson.authorName(value));
+
+  static Filter authorNameIsLessThanOrEqualTo(String? value) =>
+      Filter(_$CommentFieldMap['authorName']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$CommentPerFieldToJson.authorName(value));
+
+  static Filter authorNameIsGreaterThan(String? value) =>
+      Filter(_$CommentFieldMap['authorName']!,
+          isGreaterThan:
+              value == null ? null : _$CommentPerFieldToJson.authorName(value));
+
+  static Filter authorNameIsGreaterThanOrEqualTo(String? value) =>
+      Filter(_$CommentFieldMap['authorName']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$CommentPerFieldToJson.authorName(value));
+
+  static Filter authorNameWhereIn(Iterable<String?> value) =>
+      Filter(_$CommentFieldMap['authorName']!,
+          whereIn: value.map(
+              (e) => e == null ? null : _$CommentPerFieldToJson.authorName(e)));
+
+  static Filter authorNameWhereNotIn(Iterable<String?> value) =>
+      Filter(_$CommentFieldMap['authorName']!,
+          whereNotIn: value.map(
+              (e) => e == null ? null : _$CommentPerFieldToJson.authorName(e)));
+
+  static Filter authorNameIsNull(bool value) =>
+      Filter(_$CommentFieldMap['authorName']!, isNull: value);
+
+  static Filter messageIsEqualTo(String? value) => Filter(
+      _$CommentFieldMap['message']!,
+      isEqualTo: value == null ? null : _$CommentPerFieldToJson.message(value));
+
+  static Filter messageIsNotEqualTo(String? value) =>
+      Filter(_$CommentFieldMap['message']!,
+          isNotEqualTo:
+              value == null ? null : _$CommentPerFieldToJson.message(value));
+
+  static Filter messageIsLessThan(String? value) =>
+      Filter(_$CommentFieldMap['message']!,
+          isLessThan:
+              value == null ? null : _$CommentPerFieldToJson.message(value));
+
+  static Filter messageIsLessThanOrEqualTo(String? value) =>
+      Filter(_$CommentFieldMap['message']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$CommentPerFieldToJson.message(value));
+
+  static Filter messageIsGreaterThan(String? value) =>
+      Filter(_$CommentFieldMap['message']!,
+          isGreaterThan:
+              value == null ? null : _$CommentPerFieldToJson.message(value));
+
+  static Filter messageIsGreaterThanOrEqualTo(String? value) =>
+      Filter(_$CommentFieldMap['message']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$CommentPerFieldToJson.message(value));
+
+  static Filter messageWhereIn(Iterable<String?> value) => Filter(
+      _$CommentFieldMap['message']!,
+      whereIn: value
+          .map((e) => e == null ? null : _$CommentPerFieldToJson.message(e)));
+
+  static Filter messageWhereNotIn(Iterable<String?> value) => Filter(
+      _$CommentFieldMap['message']!,
+      whereNotIn: value
+          .map((e) => e == null ? null : _$CommentPerFieldToJson.message(e)));
+
+  static Filter messageIsNull(bool value) =>
+      Filter(_$CommentFieldMap['message']!, isNull: value);
 }
 
 class CommentDocumentSnapshot extends FirestoreDocumentSnapshot<Comment> {

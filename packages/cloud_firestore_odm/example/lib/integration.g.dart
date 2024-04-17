@@ -378,6 +378,8 @@ abstract class AdvancedJsonQuery
     bool? isNull,
   });
 
+  AdvancedJsonQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -645,6 +647,14 @@ class _$AdvancedJsonQuery
             whereNotIn?.map((e) => _$AdvancedJsonPerFieldToJson.lastName(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  AdvancedJsonQuery whereFirestoreFilter(Filter filter) {
+    return _$AdvancedJsonQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -951,6 +961,96 @@ class _$AdvancedJsonQuery
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class AdvancedJsonFilter {
+  AdvancedJsonFilter._();
+
+  static Filter firstNameIsEqualTo(String? value) => Filter(
+      _$AdvancedJsonFieldMap['firstName']!,
+      isEqualTo:
+          value == null ? null : _$AdvancedJsonPerFieldToJson.firstName(value));
+
+  static Filter firstNameIsNotEqualTo(String? value) => Filter(
+      _$AdvancedJsonFieldMap['firstName']!,
+      isNotEqualTo:
+          value == null ? null : _$AdvancedJsonPerFieldToJson.firstName(value));
+
+  static Filter firstNameIsLessThan(String? value) => Filter(
+      _$AdvancedJsonFieldMap['firstName']!,
+      isLessThan:
+          value == null ? null : _$AdvancedJsonPerFieldToJson.firstName(value));
+
+  static Filter firstNameIsLessThanOrEqualTo(String? value) => Filter(
+      _$AdvancedJsonFieldMap['firstName']!,
+      isLessThanOrEqualTo:
+          value == null ? null : _$AdvancedJsonPerFieldToJson.firstName(value));
+
+  static Filter firstNameIsGreaterThan(String? value) => Filter(
+      _$AdvancedJsonFieldMap['firstName']!,
+      isGreaterThan:
+          value == null ? null : _$AdvancedJsonPerFieldToJson.firstName(value));
+
+  static Filter firstNameIsGreaterThanOrEqualTo(String? value) => Filter(
+      _$AdvancedJsonFieldMap['firstName']!,
+      isGreaterThanOrEqualTo:
+          value == null ? null : _$AdvancedJsonPerFieldToJson.firstName(value));
+
+  static Filter firstNameWhereIn(Iterable<String?> value) => Filter(
+      _$AdvancedJsonFieldMap['firstName']!,
+      whereIn: value.map(
+          (e) => e == null ? null : _$AdvancedJsonPerFieldToJson.firstName(e)));
+
+  static Filter firstNameWhereNotIn(Iterable<String?> value) => Filter(
+      _$AdvancedJsonFieldMap['firstName']!,
+      whereNotIn: value.map(
+          (e) => e == null ? null : _$AdvancedJsonPerFieldToJson.firstName(e)));
+
+  static Filter firstNameIsNull(bool value) =>
+      Filter(_$AdvancedJsonFieldMap['firstName']!, isNull: value);
+
+  static Filter lastNameIsEqualTo(String? value) => Filter(
+      _$AdvancedJsonFieldMap['lastName']!,
+      isEqualTo:
+          value == null ? null : _$AdvancedJsonPerFieldToJson.lastName(value));
+
+  static Filter lastNameIsNotEqualTo(String? value) => Filter(
+      _$AdvancedJsonFieldMap['lastName']!,
+      isNotEqualTo:
+          value == null ? null : _$AdvancedJsonPerFieldToJson.lastName(value));
+
+  static Filter lastNameIsLessThan(String? value) => Filter(
+      _$AdvancedJsonFieldMap['lastName']!,
+      isLessThan:
+          value == null ? null : _$AdvancedJsonPerFieldToJson.lastName(value));
+
+  static Filter lastNameIsLessThanOrEqualTo(String? value) => Filter(
+      _$AdvancedJsonFieldMap['lastName']!,
+      isLessThanOrEqualTo:
+          value == null ? null : _$AdvancedJsonPerFieldToJson.lastName(value));
+
+  static Filter lastNameIsGreaterThan(String? value) => Filter(
+      _$AdvancedJsonFieldMap['lastName']!,
+      isGreaterThan:
+          value == null ? null : _$AdvancedJsonPerFieldToJson.lastName(value));
+
+  static Filter lastNameIsGreaterThanOrEqualTo(String? value) => Filter(
+      _$AdvancedJsonFieldMap['lastName']!,
+      isGreaterThanOrEqualTo:
+          value == null ? null : _$AdvancedJsonPerFieldToJson.lastName(value));
+
+  static Filter lastNameWhereIn(Iterable<String?> value) => Filter(
+      _$AdvancedJsonFieldMap['lastName']!,
+      whereIn: value.map(
+          (e) => e == null ? null : _$AdvancedJsonPerFieldToJson.lastName(e)));
+
+  static Filter lastNameWhereNotIn(Iterable<String?> value) => Filter(
+      _$AdvancedJsonFieldMap['lastName']!,
+      whereNotIn: value.map(
+          (e) => e == null ? null : _$AdvancedJsonPerFieldToJson.lastName(e)));
+
+  static Filter lastNameIsNull(bool value) =>
+      Filter(_$AdvancedJsonFieldMap['lastName']!, isNull: value);
 }
 
 class AdvancedJsonDocumentSnapshot
@@ -1412,6 +1512,8 @@ abstract class _PrivateAdvancedJsonQuery
     bool? isNull,
   });
 
+  _PrivateAdvancedJsonQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -1688,6 +1790,14 @@ class _$_PrivateAdvancedJsonQuery extends QueryReference<_PrivateAdvancedJson,
             ?.map((e) => _$PrivateAdvancedJsonPerFieldToJson.lastName(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  _PrivateAdvancedJsonQuery whereFirestoreFilter(Filter filter) {
+    return _$_PrivateAdvancedJsonQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -1998,6 +2108,108 @@ class _$_PrivateAdvancedJsonQuery extends QueryReference<_PrivateAdvancedJson,
   int get hashCode => Object.hash(runtimeType, reference);
 }
 
+class _PrivateAdvancedJsonFilter {
+  _PrivateAdvancedJsonFilter._();
+
+  static Filter firstNameIsEqualTo(String? value) =>
+      Filter(_$PrivateAdvancedJsonFieldMap['firstName']!,
+          isEqualTo: value == null
+              ? null
+              : _$PrivateAdvancedJsonPerFieldToJson.firstName(value));
+
+  static Filter firstNameIsNotEqualTo(String? value) =>
+      Filter(_$PrivateAdvancedJsonFieldMap['firstName']!,
+          isNotEqualTo: value == null
+              ? null
+              : _$PrivateAdvancedJsonPerFieldToJson.firstName(value));
+
+  static Filter firstNameIsLessThan(String? value) =>
+      Filter(_$PrivateAdvancedJsonFieldMap['firstName']!,
+          isLessThan: value == null
+              ? null
+              : _$PrivateAdvancedJsonPerFieldToJson.firstName(value));
+
+  static Filter firstNameIsLessThanOrEqualTo(String? value) =>
+      Filter(_$PrivateAdvancedJsonFieldMap['firstName']!,
+          isLessThanOrEqualTo: value == null
+              ? null
+              : _$PrivateAdvancedJsonPerFieldToJson.firstName(value));
+
+  static Filter firstNameIsGreaterThan(String? value) =>
+      Filter(_$PrivateAdvancedJsonFieldMap['firstName']!,
+          isGreaterThan: value == null
+              ? null
+              : _$PrivateAdvancedJsonPerFieldToJson.firstName(value));
+
+  static Filter firstNameIsGreaterThanOrEqualTo(String? value) =>
+      Filter(_$PrivateAdvancedJsonFieldMap['firstName']!,
+          isGreaterThanOrEqualTo: value == null
+              ? null
+              : _$PrivateAdvancedJsonPerFieldToJson.firstName(value));
+
+  static Filter firstNameWhereIn(Iterable<String?> value) => Filter(
+      _$PrivateAdvancedJsonFieldMap['firstName']!,
+      whereIn: value.map((e) =>
+          e == null ? null : _$PrivateAdvancedJsonPerFieldToJson.firstName(e)));
+
+  static Filter firstNameWhereNotIn(Iterable<String?> value) => Filter(
+      _$PrivateAdvancedJsonFieldMap['firstName']!,
+      whereNotIn: value.map((e) =>
+          e == null ? null : _$PrivateAdvancedJsonPerFieldToJson.firstName(e)));
+
+  static Filter firstNameIsNull(bool value) =>
+      Filter(_$PrivateAdvancedJsonFieldMap['firstName']!, isNull: value);
+
+  static Filter lastNameIsEqualTo(String? value) =>
+      Filter(_$PrivateAdvancedJsonFieldMap['lastName']!,
+          isEqualTo: value == null
+              ? null
+              : _$PrivateAdvancedJsonPerFieldToJson.lastName(value));
+
+  static Filter lastNameIsNotEqualTo(String? value) =>
+      Filter(_$PrivateAdvancedJsonFieldMap['lastName']!,
+          isNotEqualTo: value == null
+              ? null
+              : _$PrivateAdvancedJsonPerFieldToJson.lastName(value));
+
+  static Filter lastNameIsLessThan(String? value) =>
+      Filter(_$PrivateAdvancedJsonFieldMap['lastName']!,
+          isLessThan: value == null
+              ? null
+              : _$PrivateAdvancedJsonPerFieldToJson.lastName(value));
+
+  static Filter lastNameIsLessThanOrEqualTo(String? value) =>
+      Filter(_$PrivateAdvancedJsonFieldMap['lastName']!,
+          isLessThanOrEqualTo: value == null
+              ? null
+              : _$PrivateAdvancedJsonPerFieldToJson.lastName(value));
+
+  static Filter lastNameIsGreaterThan(String? value) =>
+      Filter(_$PrivateAdvancedJsonFieldMap['lastName']!,
+          isGreaterThan: value == null
+              ? null
+              : _$PrivateAdvancedJsonPerFieldToJson.lastName(value));
+
+  static Filter lastNameIsGreaterThanOrEqualTo(String? value) =>
+      Filter(_$PrivateAdvancedJsonFieldMap['lastName']!,
+          isGreaterThanOrEqualTo: value == null
+              ? null
+              : _$PrivateAdvancedJsonPerFieldToJson.lastName(value));
+
+  static Filter lastNameWhereIn(Iterable<String?> value) => Filter(
+      _$PrivateAdvancedJsonFieldMap['lastName']!,
+      whereIn: value.map((e) =>
+          e == null ? null : _$PrivateAdvancedJsonPerFieldToJson.lastName(e)));
+
+  static Filter lastNameWhereNotIn(Iterable<String?> value) => Filter(
+      _$PrivateAdvancedJsonFieldMap['lastName']!,
+      whereNotIn: value.map((e) =>
+          e == null ? null : _$PrivateAdvancedJsonPerFieldToJson.lastName(e)));
+
+  static Filter lastNameIsNull(bool value) =>
+      Filter(_$PrivateAdvancedJsonFieldMap['lastName']!, isNull: value);
+}
+
 class _PrivateAdvancedJsonDocumentSnapshot
     extends FirestoreDocumentSnapshot<_PrivateAdvancedJson> {
   _PrivateAdvancedJsonDocumentSnapshot._(this.snapshot)
@@ -2294,6 +2506,8 @@ abstract class EmptyModelQuery
     bool? isNull,
   });
 
+  EmptyModelQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -2447,6 +2661,14 @@ class _$EmptyModelQuery
         whereNotIn: whereNotIn,
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  EmptyModelQuery whereFirestoreFilter(Filter filter) {
+    return _$EmptyModelQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -2607,6 +2829,10 @@ class _$EmptyModelQuery
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class EmptyModelFilter {
+  EmptyModelFilter._();
 }
 
 class EmptyModelDocumentSnapshot extends FirestoreDocumentSnapshot<EmptyModel> {

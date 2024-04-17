@@ -328,6 +328,8 @@ abstract class IgnoredGetterQuery
     bool? isNull,
   });
 
+  IgnoredGetterQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -536,6 +538,14 @@ class _$IgnoredGetterQuery
             whereNotIn?.map((e) => _$IgnoredGetterPerFieldToJson.value(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  IgnoredGetterQuery whereFirestoreFilter(Filter filter) {
+    return _$IgnoredGetterQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -769,6 +779,53 @@ class _$IgnoredGetterQuery
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class IgnoredGetterFilter {
+  IgnoredGetterFilter._();
+
+  static Filter valueIsEqualTo(int? value) => Filter(
+      _$IgnoredGetterFieldMap['value']!,
+      isEqualTo:
+          value == null ? null : _$IgnoredGetterPerFieldToJson.value(value));
+
+  static Filter valueIsNotEqualTo(int? value) => Filter(
+      _$IgnoredGetterFieldMap['value']!,
+      isNotEqualTo:
+          value == null ? null : _$IgnoredGetterPerFieldToJson.value(value));
+
+  static Filter valueIsLessThan(int? value) => Filter(
+      _$IgnoredGetterFieldMap['value']!,
+      isLessThan:
+          value == null ? null : _$IgnoredGetterPerFieldToJson.value(value));
+
+  static Filter valueIsLessThanOrEqualTo(int? value) => Filter(
+      _$IgnoredGetterFieldMap['value']!,
+      isLessThanOrEqualTo:
+          value == null ? null : _$IgnoredGetterPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThan(int? value) => Filter(
+      _$IgnoredGetterFieldMap['value']!,
+      isGreaterThan:
+          value == null ? null : _$IgnoredGetterPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThanOrEqualTo(int? value) => Filter(
+      _$IgnoredGetterFieldMap['value']!,
+      isGreaterThanOrEqualTo:
+          value == null ? null : _$IgnoredGetterPerFieldToJson.value(value));
+
+  static Filter valueWhereIn(Iterable<int?> value) => Filter(
+      _$IgnoredGetterFieldMap['value']!,
+      whereIn: value.map(
+          (e) => e == null ? null : _$IgnoredGetterPerFieldToJson.value(e)));
+
+  static Filter valueWhereNotIn(Iterable<int?> value) => Filter(
+      _$IgnoredGetterFieldMap['value']!,
+      whereNotIn: value.map(
+          (e) => e == null ? null : _$IgnoredGetterPerFieldToJson.value(e)));
+
+  static Filter valueIsNull(bool value) =>
+      Filter(_$IgnoredGetterFieldMap['value']!, isNull: value);
 }
 
 class IgnoredGetterDocumentSnapshot
@@ -1153,6 +1210,8 @@ abstract class ModelQuery implements QueryReference<Model, ModelQuerySnapshot> {
     bool? isNull,
   });
 
+  ModelQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -1355,6 +1414,14 @@ class _$ModelQuery extends QueryReference<Model, ModelQuerySnapshot>
         whereNotIn: whereNotIn?.map((e) => _$ModelPerFieldToJson.value(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  ModelQuery whereFirestoreFilter(Filter filter) {
+    return _$ModelQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -1588,6 +1655,49 @@ class _$ModelQuery extends QueryReference<Model, ModelQuerySnapshot>
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class ModelFilter {
+  ModelFilter._();
+
+  static Filter valueIsEqualTo(String? value) =>
+      Filter(_$ModelFieldMap['value']!,
+          isEqualTo: value == null ? null : _$ModelPerFieldToJson.value(value));
+
+  static Filter valueIsNotEqualTo(String? value) => Filter(
+      _$ModelFieldMap['value']!,
+      isNotEqualTo: value == null ? null : _$ModelPerFieldToJson.value(value));
+
+  static Filter valueIsLessThan(String? value) => Filter(
+      _$ModelFieldMap['value']!,
+      isLessThan: value == null ? null : _$ModelPerFieldToJson.value(value));
+
+  static Filter valueIsLessThanOrEqualTo(String? value) =>
+      Filter(_$ModelFieldMap['value']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$ModelPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThan(String? value) => Filter(
+      _$ModelFieldMap['value']!,
+      isGreaterThan: value == null ? null : _$ModelPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThanOrEqualTo(String? value) =>
+      Filter(_$ModelFieldMap['value']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$ModelPerFieldToJson.value(value));
+
+  static Filter valueWhereIn(Iterable<String?> value) => Filter(
+      _$ModelFieldMap['value']!,
+      whereIn:
+          value.map((e) => e == null ? null : _$ModelPerFieldToJson.value(e)));
+
+  static Filter valueWhereNotIn(Iterable<String?> value) => Filter(
+      _$ModelFieldMap['value']!,
+      whereNotIn:
+          value.map((e) => e == null ? null : _$ModelPerFieldToJson.value(e)));
+
+  static Filter valueIsNull(bool value) =>
+      Filter(_$ModelFieldMap['value']!, isNull: value);
 }
 
 class ModelDocumentSnapshot extends FirestoreDocumentSnapshot<Model> {
@@ -2586,6 +2696,8 @@ abstract class NestedQuery
     bool? isNull,
   });
 
+  NestedQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -3525,6 +3637,14 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
             : null,
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  NestedQuery whereFirestoreFilter(Filter filter) {
+    return _$NestedQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -4637,6 +4757,571 @@ class _$NestedQuery extends QueryReference<Nested, NestedQuerySnapshot>
   int get hashCode => Object.hash(runtimeType, reference);
 }
 
+class NestedFilter {
+  NestedFilter._();
+
+  static Filter valueIsEqualTo(Nested? value) => Filter(
+      _$NestedFieldMap['value']!,
+      isEqualTo: value == null ? null : _$NestedPerFieldToJson.value(value));
+
+  static Filter valueIsNotEqualTo(Nested? value) => Filter(
+      _$NestedFieldMap['value']!,
+      isNotEqualTo: value == null ? null : _$NestedPerFieldToJson.value(value));
+
+  static Filter valueIsLessThan(Nested? value) => Filter(
+      _$NestedFieldMap['value']!,
+      isLessThan: value == null ? null : _$NestedPerFieldToJson.value(value));
+
+  static Filter valueIsLessThanOrEqualTo(Nested? value) =>
+      Filter(_$NestedFieldMap['value']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThan(Nested? value) =>
+      Filter(_$NestedFieldMap['value']!,
+          isGreaterThan:
+              value == null ? null : _$NestedPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThanOrEqualTo(Nested? value) =>
+      Filter(_$NestedFieldMap['value']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.value(value));
+
+  static Filter valueWhereIn(Iterable<Nested?> value) => Filter(
+      _$NestedFieldMap['value']!,
+      whereIn:
+          value.map((e) => e == null ? null : _$NestedPerFieldToJson.value(e)));
+
+  static Filter valueWhereNotIn(Iterable<Nested?> value) => Filter(
+      _$NestedFieldMap['value']!,
+      whereNotIn:
+          value.map((e) => e == null ? null : _$NestedPerFieldToJson.value(e)));
+
+  static Filter valueIsNull(bool value) =>
+      Filter(_$NestedFieldMap['value']!, isNull: value);
+
+  static Filter simpleIsEqualTo(int? value) => Filter(
+      _$NestedFieldMap['simple']!,
+      isEqualTo: value == null ? null : _$NestedPerFieldToJson.simple(value));
+
+  static Filter simpleIsNotEqualTo(int? value) =>
+      Filter(_$NestedFieldMap['simple']!,
+          isNotEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.simple(value));
+
+  static Filter simpleIsLessThan(int? value) => Filter(
+      _$NestedFieldMap['simple']!,
+      isLessThan: value == null ? null : _$NestedPerFieldToJson.simple(value));
+
+  static Filter simpleIsLessThanOrEqualTo(int? value) =>
+      Filter(_$NestedFieldMap['simple']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.simple(value));
+
+  static Filter simpleIsGreaterThan(int? value) =>
+      Filter(_$NestedFieldMap['simple']!,
+          isGreaterThan:
+              value == null ? null : _$NestedPerFieldToJson.simple(value));
+
+  static Filter simpleIsGreaterThanOrEqualTo(int? value) =>
+      Filter(_$NestedFieldMap['simple']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.simple(value));
+
+  static Filter simpleWhereIn(Iterable<int?> value) =>
+      Filter(_$NestedFieldMap['simple']!,
+          whereIn: value
+              .map((e) => e == null ? null : _$NestedPerFieldToJson.simple(e)));
+
+  static Filter simpleWhereNotIn(Iterable<int?> value) =>
+      Filter(_$NestedFieldMap['simple']!,
+          whereNotIn: value
+              .map((e) => e == null ? null : _$NestedPerFieldToJson.simple(e)));
+
+  static Filter simpleIsNull(bool value) =>
+      Filter(_$NestedFieldMap['simple']!, isNull: value);
+
+  static Filter valueListIsEqualTo(List<Nested>? value) =>
+      Filter(_$NestedFieldMap['valueList']!,
+          isEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.valueList(value));
+
+  static Filter valueListIsNotEqualTo(List<Nested>? value) =>
+      Filter(_$NestedFieldMap['valueList']!,
+          isNotEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.valueList(value));
+
+  static Filter valueListIsLessThan(List<Nested>? value) =>
+      Filter(_$NestedFieldMap['valueList']!,
+          isLessThan:
+              value == null ? null : _$NestedPerFieldToJson.valueList(value));
+
+  static Filter valueListIsLessThanOrEqualTo(List<Nested>? value) =>
+      Filter(_$NestedFieldMap['valueList']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.valueList(value));
+
+  static Filter valueListIsGreaterThan(List<Nested>? value) =>
+      Filter(_$NestedFieldMap['valueList']!,
+          isGreaterThan:
+              value == null ? null : _$NestedPerFieldToJson.valueList(value));
+
+  static Filter valueListIsGreaterThanOrEqualTo(List<Nested>? value) =>
+      Filter(_$NestedFieldMap['valueList']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.valueList(value));
+
+  static Filter valueListArrayContains(Nested value) =>
+      Filter(_$NestedFieldMap['valueList']!,
+          arrayContains:
+              (_$NestedPerFieldToJson.valueList([value]) as List?)!.single);
+
+  static Filter valueListArrayContainsAny(Iterable<List<Nested>?> value) =>
+      Filter(_$NestedFieldMap['valueList']!,
+          arrayContainsAny: value.map(
+              (e) => e == null ? null : _$NestedPerFieldToJson.valueList(e)));
+
+  static Filter valueListIsNull(bool value) =>
+      Filter(_$NestedFieldMap['valueList']!, isNull: value);
+
+  static Filter boolListIsEqualTo(List<bool>? value) => Filter(
+      _$NestedFieldMap['boolList']!,
+      isEqualTo: value == null ? null : _$NestedPerFieldToJson.boolList(value));
+
+  static Filter boolListIsNotEqualTo(List<bool>? value) =>
+      Filter(_$NestedFieldMap['boolList']!,
+          isNotEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.boolList(value));
+
+  static Filter boolListIsLessThan(List<bool>? value) =>
+      Filter(_$NestedFieldMap['boolList']!,
+          isLessThan:
+              value == null ? null : _$NestedPerFieldToJson.boolList(value));
+
+  static Filter boolListIsLessThanOrEqualTo(List<bool>? value) =>
+      Filter(_$NestedFieldMap['boolList']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.boolList(value));
+
+  static Filter boolListIsGreaterThan(List<bool>? value) =>
+      Filter(_$NestedFieldMap['boolList']!,
+          isGreaterThan:
+              value == null ? null : _$NestedPerFieldToJson.boolList(value));
+
+  static Filter boolListIsGreaterThanOrEqualTo(List<bool>? value) =>
+      Filter(_$NestedFieldMap['boolList']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.boolList(value));
+
+  static Filter boolListArrayContains(bool value) =>
+      Filter(_$NestedFieldMap['boolList']!,
+          arrayContains:
+              (_$NestedPerFieldToJson.boolList([value]) as List?)!.single);
+
+  static Filter boolListArrayContainsAny(Iterable<List<bool>?> value) => Filter(
+      _$NestedFieldMap['boolList']!,
+      arrayContainsAny: value
+          .map((e) => e == null ? null : _$NestedPerFieldToJson.boolList(e)));
+
+  static Filter boolListIsNull(bool value) =>
+      Filter(_$NestedFieldMap['boolList']!, isNull: value);
+
+  static Filter stringListIsEqualTo(List<String>? value) =>
+      Filter(_$NestedFieldMap['stringList']!,
+          isEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.stringList(value));
+
+  static Filter stringListIsNotEqualTo(List<String>? value) =>
+      Filter(_$NestedFieldMap['stringList']!,
+          isNotEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.stringList(value));
+
+  static Filter stringListIsLessThan(List<String>? value) =>
+      Filter(_$NestedFieldMap['stringList']!,
+          isLessThan:
+              value == null ? null : _$NestedPerFieldToJson.stringList(value));
+
+  static Filter stringListIsLessThanOrEqualTo(List<String>? value) =>
+      Filter(_$NestedFieldMap['stringList']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.stringList(value));
+
+  static Filter stringListIsGreaterThan(List<String>? value) =>
+      Filter(_$NestedFieldMap['stringList']!,
+          isGreaterThan:
+              value == null ? null : _$NestedPerFieldToJson.stringList(value));
+
+  static Filter stringListIsGreaterThanOrEqualTo(List<String>? value) =>
+      Filter(_$NestedFieldMap['stringList']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.stringList(value));
+
+  static Filter stringListArrayContains(String value) =>
+      Filter(_$NestedFieldMap['stringList']!,
+          arrayContains:
+              (_$NestedPerFieldToJson.stringList([value]) as List?)!.single);
+
+  static Filter stringListArrayContainsAny(Iterable<List<String>?> value) =>
+      Filter(_$NestedFieldMap['stringList']!,
+          arrayContainsAny: value.map(
+              (e) => e == null ? null : _$NestedPerFieldToJson.stringList(e)));
+
+  static Filter stringListIsNull(bool value) =>
+      Filter(_$NestedFieldMap['stringList']!, isNull: value);
+
+  static Filter numListIsEqualTo(List<num>? value) => Filter(
+      _$NestedFieldMap['numList']!,
+      isEqualTo: value == null ? null : _$NestedPerFieldToJson.numList(value));
+
+  static Filter numListIsNotEqualTo(List<num>? value) =>
+      Filter(_$NestedFieldMap['numList']!,
+          isNotEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.numList(value));
+
+  static Filter numListIsLessThan(List<num>? value) => Filter(
+      _$NestedFieldMap['numList']!,
+      isLessThan: value == null ? null : _$NestedPerFieldToJson.numList(value));
+
+  static Filter numListIsLessThanOrEqualTo(List<num>? value) =>
+      Filter(_$NestedFieldMap['numList']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.numList(value));
+
+  static Filter numListIsGreaterThan(List<num>? value) =>
+      Filter(_$NestedFieldMap['numList']!,
+          isGreaterThan:
+              value == null ? null : _$NestedPerFieldToJson.numList(value));
+
+  static Filter numListIsGreaterThanOrEqualTo(List<num>? value) =>
+      Filter(_$NestedFieldMap['numList']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.numList(value));
+
+  static Filter numListArrayContains(num value) =>
+      Filter(_$NestedFieldMap['numList']!,
+          arrayContains:
+              (_$NestedPerFieldToJson.numList([value]) as List?)!.single);
+
+  static Filter numListArrayContainsAny(Iterable<List<num>?> value) => Filter(
+      _$NestedFieldMap['numList']!,
+      arrayContainsAny: value
+          .map((e) => e == null ? null : _$NestedPerFieldToJson.numList(e)));
+
+  static Filter numListIsNull(bool value) =>
+      Filter(_$NestedFieldMap['numList']!, isNull: value);
+
+  static Filter objectListIsEqualTo(List<Object?>? value) =>
+      Filter(_$NestedFieldMap['objectList']!,
+          isEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.objectList(value));
+
+  static Filter objectListIsNotEqualTo(List<Object?>? value) =>
+      Filter(_$NestedFieldMap['objectList']!,
+          isNotEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.objectList(value));
+
+  static Filter objectListIsLessThan(List<Object?>? value) =>
+      Filter(_$NestedFieldMap['objectList']!,
+          isLessThan:
+              value == null ? null : _$NestedPerFieldToJson.objectList(value));
+
+  static Filter objectListIsLessThanOrEqualTo(List<Object?>? value) =>
+      Filter(_$NestedFieldMap['objectList']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.objectList(value));
+
+  static Filter objectListIsGreaterThan(List<Object?>? value) =>
+      Filter(_$NestedFieldMap['objectList']!,
+          isGreaterThan:
+              value == null ? null : _$NestedPerFieldToJson.objectList(value));
+
+  static Filter objectListIsGreaterThanOrEqualTo(List<Object?>? value) =>
+      Filter(_$NestedFieldMap['objectList']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.objectList(value));
+
+  static Filter objectListArrayContains(Object? value) =>
+      Filter(_$NestedFieldMap['objectList']!,
+          arrayContains:
+              (_$NestedPerFieldToJson.objectList([value]) as List?)!.single);
+
+  static Filter objectListArrayContainsAny(Iterable<List<Object?>?> value) =>
+      Filter(_$NestedFieldMap['objectList']!,
+          arrayContainsAny: value.map(
+              (e) => e == null ? null : _$NestedPerFieldToJson.objectList(e)));
+
+  static Filter objectListIsNull(bool value) =>
+      Filter(_$NestedFieldMap['objectList']!, isNull: value);
+
+  static Filter dynamicListIsEqualTo(List<dynamic>? value) =>
+      Filter(_$NestedFieldMap['dynamicList']!,
+          isEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.dynamicList(value));
+
+  static Filter dynamicListIsNotEqualTo(List<dynamic>? value) =>
+      Filter(_$NestedFieldMap['dynamicList']!,
+          isNotEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.dynamicList(value));
+
+  static Filter dynamicListIsLessThan(List<dynamic>? value) =>
+      Filter(_$NestedFieldMap['dynamicList']!,
+          isLessThan:
+              value == null ? null : _$NestedPerFieldToJson.dynamicList(value));
+
+  static Filter dynamicListIsLessThanOrEqualTo(List<dynamic>? value) =>
+      Filter(_$NestedFieldMap['dynamicList']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.dynamicList(value));
+
+  static Filter dynamicListIsGreaterThan(List<dynamic>? value) =>
+      Filter(_$NestedFieldMap['dynamicList']!,
+          isGreaterThan:
+              value == null ? null : _$NestedPerFieldToJson.dynamicList(value));
+
+  static Filter dynamicListIsGreaterThanOrEqualTo(List<dynamic>? value) =>
+      Filter(_$NestedFieldMap['dynamicList']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.dynamicList(value));
+
+  static Filter dynamicListArrayContains(dynamic value) =>
+      Filter(_$NestedFieldMap['dynamicList']!,
+          arrayContains:
+              (_$NestedPerFieldToJson.dynamicList([value]) as List?)!.single);
+
+  static Filter dynamicListArrayContainsAny(Iterable<List<dynamic>?> value) =>
+      Filter(_$NestedFieldMap['dynamicList']!,
+          arrayContainsAny: value.map(
+              (e) => e == null ? null : _$NestedPerFieldToJson.dynamicList(e)));
+
+  static Filter dynamicListIsNull(bool value) =>
+      Filter(_$NestedFieldMap['dynamicList']!, isNull: value);
+
+  static Filter boolSetIsEqualTo(Set<bool>? value) => Filter(
+      _$NestedFieldMap['boolSet']!,
+      isEqualTo: value == null ? null : _$NestedPerFieldToJson.boolSet(value));
+
+  static Filter boolSetIsNotEqualTo(Set<bool>? value) =>
+      Filter(_$NestedFieldMap['boolSet']!,
+          isNotEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.boolSet(value));
+
+  static Filter boolSetIsLessThan(Set<bool>? value) => Filter(
+      _$NestedFieldMap['boolSet']!,
+      isLessThan: value == null ? null : _$NestedPerFieldToJson.boolSet(value));
+
+  static Filter boolSetIsLessThanOrEqualTo(Set<bool>? value) =>
+      Filter(_$NestedFieldMap['boolSet']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.boolSet(value));
+
+  static Filter boolSetIsGreaterThan(Set<bool>? value) =>
+      Filter(_$NestedFieldMap['boolSet']!,
+          isGreaterThan:
+              value == null ? null : _$NestedPerFieldToJson.boolSet(value));
+
+  static Filter boolSetIsGreaterThanOrEqualTo(Set<bool>? value) =>
+      Filter(_$NestedFieldMap['boolSet']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.boolSet(value));
+
+  static Filter boolSetArrayContains(bool value) =>
+      Filter(_$NestedFieldMap['boolSet']!,
+          arrayContains:
+              (_$NestedPerFieldToJson.boolSet({value}) as List?)!.single);
+
+  static Filter boolSetArrayContainsAny(Iterable<Set<bool>?> value) => Filter(
+      _$NestedFieldMap['boolSet']!,
+      arrayContainsAny: value
+          .map((e) => e == null ? null : _$NestedPerFieldToJson.boolSet(e)));
+
+  static Filter boolSetIsNull(bool value) =>
+      Filter(_$NestedFieldMap['boolSet']!, isNull: value);
+
+  static Filter enumValueIsEqualTo(TestEnum? value) =>
+      Filter(_$NestedFieldMap['enumValue']!,
+          isEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.enumValue(value));
+
+  static Filter enumValueIsNotEqualTo(TestEnum? value) =>
+      Filter(_$NestedFieldMap['enumValue']!,
+          isNotEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.enumValue(value));
+
+  static Filter enumValueIsLessThan(TestEnum? value) =>
+      Filter(_$NestedFieldMap['enumValue']!,
+          isLessThan:
+              value == null ? null : _$NestedPerFieldToJson.enumValue(value));
+
+  static Filter enumValueIsLessThanOrEqualTo(TestEnum? value) =>
+      Filter(_$NestedFieldMap['enumValue']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.enumValue(value));
+
+  static Filter enumValueIsGreaterThan(TestEnum? value) =>
+      Filter(_$NestedFieldMap['enumValue']!,
+          isGreaterThan:
+              value == null ? null : _$NestedPerFieldToJson.enumValue(value));
+
+  static Filter enumValueIsGreaterThanOrEqualTo(TestEnum? value) =>
+      Filter(_$NestedFieldMap['enumValue']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.enumValue(value));
+
+  static Filter enumValueWhereIn(Iterable<TestEnum?> value) => Filter(
+      _$NestedFieldMap['enumValue']!,
+      whereIn: value
+          .map((e) => e == null ? null : _$NestedPerFieldToJson.enumValue(e)));
+
+  static Filter enumValueWhereNotIn(Iterable<TestEnum?> value) => Filter(
+      _$NestedFieldMap['enumValue']!,
+      whereNotIn: value
+          .map((e) => e == null ? null : _$NestedPerFieldToJson.enumValue(e)));
+
+  static Filter enumValueIsNull(bool value) =>
+      Filter(_$NestedFieldMap['enumValue']!, isNull: value);
+
+  static Filter nullableEnumValueIsEqualTo(TestEnum? value) =>
+      Filter(_$NestedFieldMap['nullableEnumValue']!,
+          isEqualTo: value == null
+              ? null
+              : _$NestedPerFieldToJson.nullableEnumValue(value));
+
+  static Filter nullableEnumValueIsNotEqualTo(TestEnum? value) =>
+      Filter(_$NestedFieldMap['nullableEnumValue']!,
+          isNotEqualTo: value == null
+              ? null
+              : _$NestedPerFieldToJson.nullableEnumValue(value));
+
+  static Filter nullableEnumValueIsLessThan(TestEnum? value) =>
+      Filter(_$NestedFieldMap['nullableEnumValue']!,
+          isLessThan: value == null
+              ? null
+              : _$NestedPerFieldToJson.nullableEnumValue(value));
+
+  static Filter nullableEnumValueIsLessThanOrEqualTo(TestEnum? value) =>
+      Filter(_$NestedFieldMap['nullableEnumValue']!,
+          isLessThanOrEqualTo: value == null
+              ? null
+              : _$NestedPerFieldToJson.nullableEnumValue(value));
+
+  static Filter nullableEnumValueIsGreaterThan(TestEnum? value) =>
+      Filter(_$NestedFieldMap['nullableEnumValue']!,
+          isGreaterThan: value == null
+              ? null
+              : _$NestedPerFieldToJson.nullableEnumValue(value));
+
+  static Filter nullableEnumValueIsGreaterThanOrEqualTo(TestEnum? value) =>
+      Filter(_$NestedFieldMap['nullableEnumValue']!,
+          isGreaterThanOrEqualTo: value == null
+              ? null
+              : _$NestedPerFieldToJson.nullableEnumValue(value));
+
+  static Filter nullableEnumValueWhereIn(Iterable<TestEnum?> value) =>
+      Filter(_$NestedFieldMap['nullableEnumValue']!,
+          whereIn: value.map((e) =>
+              e == null ? null : _$NestedPerFieldToJson.nullableEnumValue(e)));
+
+  static Filter nullableEnumValueWhereNotIn(Iterable<TestEnum?> value) =>
+      Filter(_$NestedFieldMap['nullableEnumValue']!,
+          whereNotIn: value.map((e) =>
+              e == null ? null : _$NestedPerFieldToJson.nullableEnumValue(e)));
+
+  static Filter nullableEnumValueIsNull(bool value) =>
+      Filter(_$NestedFieldMap['nullableEnumValue']!, isNull: value);
+
+  static Filter enumListIsEqualTo(List<TestEnum>? value) => Filter(
+      _$NestedFieldMap['enumList']!,
+      isEqualTo: value == null ? null : _$NestedPerFieldToJson.enumList(value));
+
+  static Filter enumListIsNotEqualTo(List<TestEnum>? value) =>
+      Filter(_$NestedFieldMap['enumList']!,
+          isNotEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.enumList(value));
+
+  static Filter enumListIsLessThan(List<TestEnum>? value) =>
+      Filter(_$NestedFieldMap['enumList']!,
+          isLessThan:
+              value == null ? null : _$NestedPerFieldToJson.enumList(value));
+
+  static Filter enumListIsLessThanOrEqualTo(List<TestEnum>? value) =>
+      Filter(_$NestedFieldMap['enumList']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.enumList(value));
+
+  static Filter enumListIsGreaterThan(List<TestEnum>? value) =>
+      Filter(_$NestedFieldMap['enumList']!,
+          isGreaterThan:
+              value == null ? null : _$NestedPerFieldToJson.enumList(value));
+
+  static Filter enumListIsGreaterThanOrEqualTo(List<TestEnum>? value) =>
+      Filter(_$NestedFieldMap['enumList']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$NestedPerFieldToJson.enumList(value));
+
+  static Filter enumListArrayContains(TestEnum value) =>
+      Filter(_$NestedFieldMap['enumList']!,
+          arrayContains:
+              (_$NestedPerFieldToJson.enumList([value]) as List?)!.single);
+
+  static Filter enumListArrayContainsAny(Iterable<List<TestEnum>?> value) =>
+      Filter(_$NestedFieldMap['enumList']!,
+          arrayContainsAny: value.map(
+              (e) => e == null ? null : _$NestedPerFieldToJson.enumList(e)));
+
+  static Filter enumListIsNull(bool value) =>
+      Filter(_$NestedFieldMap['enumList']!, isNull: value);
+
+  static Filter nullableEnumListIsEqualTo(List<TestEnum>? value) =>
+      Filter(_$NestedFieldMap['nullableEnumList']!,
+          isEqualTo: value == null
+              ? null
+              : _$NestedPerFieldToJson.nullableEnumList(value));
+
+  static Filter nullableEnumListIsNotEqualTo(List<TestEnum>? value) =>
+      Filter(_$NestedFieldMap['nullableEnumList']!,
+          isNotEqualTo: value == null
+              ? null
+              : _$NestedPerFieldToJson.nullableEnumList(value));
+
+  static Filter nullableEnumListIsLessThan(List<TestEnum>? value) =>
+      Filter(_$NestedFieldMap['nullableEnumList']!,
+          isLessThan: value == null
+              ? null
+              : _$NestedPerFieldToJson.nullableEnumList(value));
+
+  static Filter nullableEnumListIsLessThanOrEqualTo(List<TestEnum>? value) =>
+      Filter(_$NestedFieldMap['nullableEnumList']!,
+          isLessThanOrEqualTo: value == null
+              ? null
+              : _$NestedPerFieldToJson.nullableEnumList(value));
+
+  static Filter nullableEnumListIsGreaterThan(List<TestEnum>? value) =>
+      Filter(_$NestedFieldMap['nullableEnumList']!,
+          isGreaterThan: value == null
+              ? null
+              : _$NestedPerFieldToJson.nullableEnumList(value));
+
+  static Filter nullableEnumListIsGreaterThanOrEqualTo(List<TestEnum>? value) =>
+      Filter(_$NestedFieldMap['nullableEnumList']!,
+          isGreaterThanOrEqualTo: value == null
+              ? null
+              : _$NestedPerFieldToJson.nullableEnumList(value));
+
+  static Filter nullableEnumListArrayContains(TestEnum value) => Filter(
+      _$NestedFieldMap['nullableEnumList']!,
+      arrayContains:
+          (_$NestedPerFieldToJson.nullableEnumList([value]) as List?)!.single);
+
+  static Filter nullableEnumListArrayContainsAny(
+          Iterable<List<TestEnum>?> value) =>
+      Filter(_$NestedFieldMap['nullableEnumList']!,
+          arrayContainsAny: value.map((e) =>
+              e == null ? null : _$NestedPerFieldToJson.nullableEnumList(e)));
+
+  static Filter nullableEnumListIsNull(bool value) =>
+      Filter(_$NestedFieldMap['nullableEnumList']!, isNull: value);
+}
+
 class NestedDocumentSnapshot extends FirestoreDocumentSnapshot<Nested> {
   NestedDocumentSnapshot._(this.snapshot) : data = snapshot.data();
 
@@ -4926,6 +5611,8 @@ abstract class EmptyModelQuery
     bool? isNull,
   });
 
+  EmptyModelQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -5079,6 +5766,14 @@ class _$EmptyModelQuery
         whereNotIn: whereNotIn,
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  EmptyModelQuery whereFirestoreFilter(Filter filter) {
+    return _$EmptyModelQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -5239,6 +5934,10 @@ class _$EmptyModelQuery
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class EmptyModelFilter {
+  EmptyModelFilter._();
 }
 
 class EmptyModelDocumentSnapshot extends FirestoreDocumentSnapshot<EmptyModel> {
@@ -5632,6 +6331,8 @@ abstract class OptionalJsonQuery
     bool? isNull,
   });
 
+  OptionalJsonQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -5840,6 +6541,14 @@ class _$OptionalJsonQuery
             whereNotIn?.map((e) => _$OptionalJsonPerFieldToJson.value(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  OptionalJsonQuery whereFirestoreFilter(Filter filter) {
+    return _$OptionalJsonQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -6073,6 +6782,53 @@ class _$OptionalJsonQuery
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class OptionalJsonFilter {
+  OptionalJsonFilter._();
+
+  static Filter valueIsEqualTo(int? value) =>
+      Filter(_$OptionalJsonFieldMap['value']!,
+          isEqualTo:
+              value == null ? null : _$OptionalJsonPerFieldToJson.value(value));
+
+  static Filter valueIsNotEqualTo(int? value) =>
+      Filter(_$OptionalJsonFieldMap['value']!,
+          isNotEqualTo:
+              value == null ? null : _$OptionalJsonPerFieldToJson.value(value));
+
+  static Filter valueIsLessThan(int? value) =>
+      Filter(_$OptionalJsonFieldMap['value']!,
+          isLessThan:
+              value == null ? null : _$OptionalJsonPerFieldToJson.value(value));
+
+  static Filter valueIsLessThanOrEqualTo(int? value) =>
+      Filter(_$OptionalJsonFieldMap['value']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$OptionalJsonPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThan(int? value) =>
+      Filter(_$OptionalJsonFieldMap['value']!,
+          isGreaterThan:
+              value == null ? null : _$OptionalJsonPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThanOrEqualTo(int? value) =>
+      Filter(_$OptionalJsonFieldMap['value']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$OptionalJsonPerFieldToJson.value(value));
+
+  static Filter valueWhereIn(Iterable<int?> value) =>
+      Filter(_$OptionalJsonFieldMap['value']!,
+          whereIn: value.map(
+              (e) => e == null ? null : _$OptionalJsonPerFieldToJson.value(e)));
+
+  static Filter valueWhereNotIn(Iterable<int?> value) =>
+      Filter(_$OptionalJsonFieldMap['value']!,
+          whereNotIn: value.map(
+              (e) => e == null ? null : _$OptionalJsonPerFieldToJson.value(e)));
+
+  static Filter valueIsNull(bool value) =>
+      Filter(_$OptionalJsonFieldMap['value']!, isNull: value);
 }
 
 class OptionalJsonDocumentSnapshot
@@ -6465,6 +7221,8 @@ abstract class MixedJsonQuery
     bool? isNull,
   });
 
+  MixedJsonQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -6669,6 +7427,14 @@ class _$MixedJsonQuery extends QueryReference<MixedJson, MixedJsonQuerySnapshot>
         whereNotIn: whereNotIn?.map((e) => _$MixedJsonPerFieldToJson.value(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  MixedJsonQuery whereFirestoreFilter(Filter filter) {
+    return _$MixedJsonQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -6902,6 +7668,52 @@ class _$MixedJsonQuery extends QueryReference<MixedJson, MixedJsonQuerySnapshot>
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class MixedJsonFilter {
+  MixedJsonFilter._();
+
+  static Filter valueIsEqualTo(int? value) => Filter(
+      _$MixedJsonFieldMap['value']!,
+      isEqualTo: value == null ? null : _$MixedJsonPerFieldToJson.value(value));
+
+  static Filter valueIsNotEqualTo(int? value) =>
+      Filter(_$MixedJsonFieldMap['value']!,
+          isNotEqualTo:
+              value == null ? null : _$MixedJsonPerFieldToJson.value(value));
+
+  static Filter valueIsLessThan(int? value) => Filter(
+      _$MixedJsonFieldMap['value']!,
+      isLessThan:
+          value == null ? null : _$MixedJsonPerFieldToJson.value(value));
+
+  static Filter valueIsLessThanOrEqualTo(int? value) =>
+      Filter(_$MixedJsonFieldMap['value']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$MixedJsonPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThan(int? value) =>
+      Filter(_$MixedJsonFieldMap['value']!,
+          isGreaterThan:
+              value == null ? null : _$MixedJsonPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThanOrEqualTo(int? value) =>
+      Filter(_$MixedJsonFieldMap['value']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$MixedJsonPerFieldToJson.value(value));
+
+  static Filter valueWhereIn(Iterable<int?> value) => Filter(
+      _$MixedJsonFieldMap['value']!,
+      whereIn: value
+          .map((e) => e == null ? null : _$MixedJsonPerFieldToJson.value(e)));
+
+  static Filter valueWhereNotIn(Iterable<int?> value) => Filter(
+      _$MixedJsonFieldMap['value']!,
+      whereNotIn: value
+          .map((e) => e == null ? null : _$MixedJsonPerFieldToJson.value(e)));
+
+  static Filter valueIsNull(bool value) =>
+      Filter(_$MixedJsonFieldMap['value']!, isNull: value);
 }
 
 class MixedJsonDocumentSnapshot extends FirestoreDocumentSnapshot<MixedJson> {
@@ -7379,6 +8191,8 @@ abstract class RootQuery implements QueryReference<Root, RootQuerySnapshot> {
     bool? isNull,
   });
 
+  RootQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -7635,6 +8449,14 @@ class _$RootQuery extends QueryReference<Root, RootQuerySnapshot>
         whereNotIn: whereNotIn?.map((e) => _$RootPerFieldToJson.nullable(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  RootQuery whereFirestoreFilter(Filter filter) {
+    return _$RootQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -7941,6 +8763,94 @@ class _$RootQuery extends QueryReference<Root, RootQuerySnapshot>
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class RootFilter {
+  RootFilter._();
+
+  static Filter nonNullableIsEqualTo(String? value) =>
+      Filter(_$RootFieldMap['nonNullable']!,
+          isEqualTo:
+              value == null ? null : _$RootPerFieldToJson.nonNullable(value));
+
+  static Filter nonNullableIsNotEqualTo(String? value) =>
+      Filter(_$RootFieldMap['nonNullable']!,
+          isNotEqualTo:
+              value == null ? null : _$RootPerFieldToJson.nonNullable(value));
+
+  static Filter nonNullableIsLessThan(String? value) =>
+      Filter(_$RootFieldMap['nonNullable']!,
+          isLessThan:
+              value == null ? null : _$RootPerFieldToJson.nonNullable(value));
+
+  static Filter nonNullableIsLessThanOrEqualTo(String? value) =>
+      Filter(_$RootFieldMap['nonNullable']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$RootPerFieldToJson.nonNullable(value));
+
+  static Filter nonNullableIsGreaterThan(String? value) =>
+      Filter(_$RootFieldMap['nonNullable']!,
+          isGreaterThan:
+              value == null ? null : _$RootPerFieldToJson.nonNullable(value));
+
+  static Filter nonNullableIsGreaterThanOrEqualTo(String? value) =>
+      Filter(_$RootFieldMap['nonNullable']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$RootPerFieldToJson.nonNullable(value));
+
+  static Filter nonNullableWhereIn(Iterable<String?> value) => Filter(
+      _$RootFieldMap['nonNullable']!,
+      whereIn: value
+          .map((e) => e == null ? null : _$RootPerFieldToJson.nonNullable(e)));
+
+  static Filter nonNullableWhereNotIn(Iterable<String?> value) => Filter(
+      _$RootFieldMap['nonNullable']!,
+      whereNotIn: value
+          .map((e) => e == null ? null : _$RootPerFieldToJson.nonNullable(e)));
+
+  static Filter nonNullableIsNull(bool value) =>
+      Filter(_$RootFieldMap['nonNullable']!, isNull: value);
+
+  static Filter nullableIsEqualTo(int? value) => Filter(
+      _$RootFieldMap['nullable']!,
+      isEqualTo: value == null ? null : _$RootPerFieldToJson.nullable(value));
+
+  static Filter nullableIsNotEqualTo(int? value) =>
+      Filter(_$RootFieldMap['nullable']!,
+          isNotEqualTo:
+              value == null ? null : _$RootPerFieldToJson.nullable(value));
+
+  static Filter nullableIsLessThan(int? value) => Filter(
+      _$RootFieldMap['nullable']!,
+      isLessThan: value == null ? null : _$RootPerFieldToJson.nullable(value));
+
+  static Filter nullableIsLessThanOrEqualTo(int? value) =>
+      Filter(_$RootFieldMap['nullable']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$RootPerFieldToJson.nullable(value));
+
+  static Filter nullableIsGreaterThan(int? value) =>
+      Filter(_$RootFieldMap['nullable']!,
+          isGreaterThan:
+              value == null ? null : _$RootPerFieldToJson.nullable(value));
+
+  static Filter nullableIsGreaterThanOrEqualTo(int? value) =>
+      Filter(_$RootFieldMap['nullable']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$RootPerFieldToJson.nullable(value));
+
+  static Filter nullableWhereIn(Iterable<int?> value) =>
+      Filter(_$RootFieldMap['nullable']!,
+          whereIn: value
+              .map((e) => e == null ? null : _$RootPerFieldToJson.nullable(e)));
+
+  static Filter nullableWhereNotIn(Iterable<int?> value) =>
+      Filter(_$RootFieldMap['nullable']!,
+          whereNotIn: value
+              .map((e) => e == null ? null : _$RootPerFieldToJson.nullable(e)));
+
+  static Filter nullableIsNull(bool value) =>
+      Filter(_$RootFieldMap['nullable']!, isNull: value);
 }
 
 class RootDocumentSnapshot extends FirestoreDocumentSnapshot<Root> {
@@ -8394,6 +9304,8 @@ abstract class SubQuery implements QueryReference<Sub, SubQuerySnapshot> {
     bool? isNull,
   });
 
+  SubQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -8650,6 +9562,14 @@ class _$SubQuery extends QueryReference<Sub, SubQuerySnapshot>
         whereNotIn: whereNotIn?.map((e) => _$SubPerFieldToJson.nullable(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  SubQuery whereFirestoreFilter(Filter filter) {
+    return _$SubQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -8956,6 +9876,92 @@ class _$SubQuery extends QueryReference<Sub, SubQuerySnapshot>
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class SubFilter {
+  SubFilter._();
+
+  static Filter nonNullableIsEqualTo(String? value) => Filter(
+      _$SubFieldMap['nonNullable']!,
+      isEqualTo: value == null ? null : _$SubPerFieldToJson.nonNullable(value));
+
+  static Filter nonNullableIsNotEqualTo(String? value) =>
+      Filter(_$SubFieldMap['nonNullable']!,
+          isNotEqualTo:
+              value == null ? null : _$SubPerFieldToJson.nonNullable(value));
+
+  static Filter nonNullableIsLessThan(String? value) =>
+      Filter(_$SubFieldMap['nonNullable']!,
+          isLessThan:
+              value == null ? null : _$SubPerFieldToJson.nonNullable(value));
+
+  static Filter nonNullableIsLessThanOrEqualTo(String? value) =>
+      Filter(_$SubFieldMap['nonNullable']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$SubPerFieldToJson.nonNullable(value));
+
+  static Filter nonNullableIsGreaterThan(String? value) =>
+      Filter(_$SubFieldMap['nonNullable']!,
+          isGreaterThan:
+              value == null ? null : _$SubPerFieldToJson.nonNullable(value));
+
+  static Filter nonNullableIsGreaterThanOrEqualTo(String? value) =>
+      Filter(_$SubFieldMap['nonNullable']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$SubPerFieldToJson.nonNullable(value));
+
+  static Filter nonNullableWhereIn(Iterable<String?> value) => Filter(
+      _$SubFieldMap['nonNullable']!,
+      whereIn: value
+          .map((e) => e == null ? null : _$SubPerFieldToJson.nonNullable(e)));
+
+  static Filter nonNullableWhereNotIn(Iterable<String?> value) => Filter(
+      _$SubFieldMap['nonNullable']!,
+      whereNotIn: value
+          .map((e) => e == null ? null : _$SubPerFieldToJson.nonNullable(e)));
+
+  static Filter nonNullableIsNull(bool value) =>
+      Filter(_$SubFieldMap['nonNullable']!, isNull: value);
+
+  static Filter nullableIsEqualTo(int? value) => Filter(
+      _$SubFieldMap['nullable']!,
+      isEqualTo: value == null ? null : _$SubPerFieldToJson.nullable(value));
+
+  static Filter nullableIsNotEqualTo(int? value) => Filter(
+      _$SubFieldMap['nullable']!,
+      isNotEqualTo: value == null ? null : _$SubPerFieldToJson.nullable(value));
+
+  static Filter nullableIsLessThan(int? value) => Filter(
+      _$SubFieldMap['nullable']!,
+      isLessThan: value == null ? null : _$SubPerFieldToJson.nullable(value));
+
+  static Filter nullableIsLessThanOrEqualTo(int? value) =>
+      Filter(_$SubFieldMap['nullable']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$SubPerFieldToJson.nullable(value));
+
+  static Filter nullableIsGreaterThan(int? value) =>
+      Filter(_$SubFieldMap['nullable']!,
+          isGreaterThan:
+              value == null ? null : _$SubPerFieldToJson.nullable(value));
+
+  static Filter nullableIsGreaterThanOrEqualTo(int? value) =>
+      Filter(_$SubFieldMap['nullable']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$SubPerFieldToJson.nullable(value));
+
+  static Filter nullableWhereIn(Iterable<int?> value) => Filter(
+      _$SubFieldMap['nullable']!,
+      whereIn:
+          value.map((e) => e == null ? null : _$SubPerFieldToJson.nullable(e)));
+
+  static Filter nullableWhereNotIn(Iterable<int?> value) => Filter(
+      _$SubFieldMap['nullable']!,
+      whereNotIn:
+          value.map((e) => e == null ? null : _$SubPerFieldToJson.nullable(e)));
+
+  static Filter nullableIsNull(bool value) =>
+      Filter(_$SubFieldMap['nullable']!, isNull: value);
 }
 
 class SubDocumentSnapshot extends FirestoreDocumentSnapshot<Sub> {
@@ -9365,6 +10371,8 @@ abstract class AsCamelCaseQuery
     bool? isNull,
   });
 
+  AsCamelCaseQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -9573,6 +10581,14 @@ class _$AsCamelCaseQuery
             whereNotIn?.map((e) => _$AsCamelCasePerFieldToJson.value(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  AsCamelCaseQuery whereFirestoreFilter(Filter filter) {
+    return _$AsCamelCaseQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -9806,6 +10822,53 @@ class _$AsCamelCaseQuery
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class AsCamelCaseFilter {
+  AsCamelCaseFilter._();
+
+  static Filter valueIsEqualTo(num? value) =>
+      Filter(_$AsCamelCaseFieldMap['value']!,
+          isEqualTo:
+              value == null ? null : _$AsCamelCasePerFieldToJson.value(value));
+
+  static Filter valueIsNotEqualTo(num? value) =>
+      Filter(_$AsCamelCaseFieldMap['value']!,
+          isNotEqualTo:
+              value == null ? null : _$AsCamelCasePerFieldToJson.value(value));
+
+  static Filter valueIsLessThan(num? value) =>
+      Filter(_$AsCamelCaseFieldMap['value']!,
+          isLessThan:
+              value == null ? null : _$AsCamelCasePerFieldToJson.value(value));
+
+  static Filter valueIsLessThanOrEqualTo(num? value) =>
+      Filter(_$AsCamelCaseFieldMap['value']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$AsCamelCasePerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThan(num? value) =>
+      Filter(_$AsCamelCaseFieldMap['value']!,
+          isGreaterThan:
+              value == null ? null : _$AsCamelCasePerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThanOrEqualTo(num? value) =>
+      Filter(_$AsCamelCaseFieldMap['value']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$AsCamelCasePerFieldToJson.value(value));
+
+  static Filter valueWhereIn(Iterable<num?> value) => Filter(
+      _$AsCamelCaseFieldMap['value']!,
+      whereIn: value
+          .map((e) => e == null ? null : _$AsCamelCasePerFieldToJson.value(e)));
+
+  static Filter valueWhereNotIn(Iterable<num?> value) => Filter(
+      _$AsCamelCaseFieldMap['value']!,
+      whereNotIn: value
+          .map((e) => e == null ? null : _$AsCamelCasePerFieldToJson.value(e)));
+
+  static Filter valueIsNull(bool value) =>
+      Filter(_$AsCamelCaseFieldMap['value']!, isNull: value);
 }
 
 class AsCamelCaseDocumentSnapshot
@@ -10221,6 +11284,8 @@ abstract class CustomSubNameQuery
     bool? isNull,
   });
 
+  CustomSubNameQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -10429,6 +11494,14 @@ class _$CustomSubNameQuery
             whereNotIn?.map((e) => _$CustomSubNamePerFieldToJson.value(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  CustomSubNameQuery whereFirestoreFilter(Filter filter) {
+    return _$CustomSubNameQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -10662,6 +11735,53 @@ class _$CustomSubNameQuery
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class CustomSubNameFilter {
+  CustomSubNameFilter._();
+
+  static Filter valueIsEqualTo(num? value) => Filter(
+      _$CustomSubNameFieldMap['value']!,
+      isEqualTo:
+          value == null ? null : _$CustomSubNamePerFieldToJson.value(value));
+
+  static Filter valueIsNotEqualTo(num? value) => Filter(
+      _$CustomSubNameFieldMap['value']!,
+      isNotEqualTo:
+          value == null ? null : _$CustomSubNamePerFieldToJson.value(value));
+
+  static Filter valueIsLessThan(num? value) => Filter(
+      _$CustomSubNameFieldMap['value']!,
+      isLessThan:
+          value == null ? null : _$CustomSubNamePerFieldToJson.value(value));
+
+  static Filter valueIsLessThanOrEqualTo(num? value) => Filter(
+      _$CustomSubNameFieldMap['value']!,
+      isLessThanOrEqualTo:
+          value == null ? null : _$CustomSubNamePerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThan(num? value) => Filter(
+      _$CustomSubNameFieldMap['value']!,
+      isGreaterThan:
+          value == null ? null : _$CustomSubNamePerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThanOrEqualTo(num? value) => Filter(
+      _$CustomSubNameFieldMap['value']!,
+      isGreaterThanOrEqualTo:
+          value == null ? null : _$CustomSubNamePerFieldToJson.value(value));
+
+  static Filter valueWhereIn(Iterable<num?> value) => Filter(
+      _$CustomSubNameFieldMap['value']!,
+      whereIn: value.map(
+          (e) => e == null ? null : _$CustomSubNamePerFieldToJson.value(e)));
+
+  static Filter valueWhereNotIn(Iterable<num?> value) => Filter(
+      _$CustomSubNameFieldMap['value']!,
+      whereNotIn: value.map(
+          (e) => e == null ? null : _$CustomSubNamePerFieldToJson.value(e)));
+
+  static Filter valueIsNull(bool value) =>
+      Filter(_$CustomSubNameFieldMap['value']!, isNull: value);
 }
 
 class CustomSubNameDocumentSnapshot
@@ -11083,6 +12203,8 @@ abstract class ThisIsACustomPrefixQuery
     bool? isNull,
   });
 
+  ThisIsACustomPrefixQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -11295,6 +12417,14 @@ class _$ThisIsACustomPrefixQuery
             whereNotIn?.map((e) => _$CustomClassPrefixPerFieldToJson.value(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  ThisIsACustomPrefixQuery whereFirestoreFilter(Filter filter) {
+    return _$ThisIsACustomPrefixQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -11528,6 +12658,59 @@ class _$ThisIsACustomPrefixQuery
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class ThisIsACustomPrefixFilter {
+  ThisIsACustomPrefixFilter._();
+
+  static Filter valueIsEqualTo(num? value) =>
+      Filter(_$CustomClassPrefixFieldMap['value']!,
+          isEqualTo: value == null
+              ? null
+              : _$CustomClassPrefixPerFieldToJson.value(value));
+
+  static Filter valueIsNotEqualTo(num? value) =>
+      Filter(_$CustomClassPrefixFieldMap['value']!,
+          isNotEqualTo: value == null
+              ? null
+              : _$CustomClassPrefixPerFieldToJson.value(value));
+
+  static Filter valueIsLessThan(num? value) =>
+      Filter(_$CustomClassPrefixFieldMap['value']!,
+          isLessThan: value == null
+              ? null
+              : _$CustomClassPrefixPerFieldToJson.value(value));
+
+  static Filter valueIsLessThanOrEqualTo(num? value) =>
+      Filter(_$CustomClassPrefixFieldMap['value']!,
+          isLessThanOrEqualTo: value == null
+              ? null
+              : _$CustomClassPrefixPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThan(num? value) =>
+      Filter(_$CustomClassPrefixFieldMap['value']!,
+          isGreaterThan: value == null
+              ? null
+              : _$CustomClassPrefixPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThanOrEqualTo(num? value) =>
+      Filter(_$CustomClassPrefixFieldMap['value']!,
+          isGreaterThanOrEqualTo: value == null
+              ? null
+              : _$CustomClassPrefixPerFieldToJson.value(value));
+
+  static Filter valueWhereIn(Iterable<num?> value) =>
+      Filter(_$CustomClassPrefixFieldMap['value']!,
+          whereIn: value.map((e) =>
+              e == null ? null : _$CustomClassPrefixPerFieldToJson.value(e)));
+
+  static Filter valueWhereNotIn(Iterable<num?> value) =>
+      Filter(_$CustomClassPrefixFieldMap['value']!,
+          whereNotIn: value.map((e) =>
+              e == null ? null : _$CustomClassPrefixPerFieldToJson.value(e)));
+
+  static Filter valueIsNull(bool value) =>
+      Filter(_$CustomClassPrefixFieldMap['value']!, isNull: value);
 }
 
 class ThisIsACustomPrefixDocumentSnapshot
@@ -11936,6 +13119,8 @@ abstract class ExplicitPathQuery
     bool? isNull,
   });
 
+  ExplicitPathQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -12144,6 +13329,14 @@ class _$ExplicitPathQuery
             whereNotIn?.map((e) => _$ExplicitPathPerFieldToJson.value(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  ExplicitPathQuery whereFirestoreFilter(Filter filter) {
+    return _$ExplicitPathQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -12377,6 +13570,53 @@ class _$ExplicitPathQuery
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class ExplicitPathFilter {
+  ExplicitPathFilter._();
+
+  static Filter valueIsEqualTo(num? value) =>
+      Filter(_$ExplicitPathFieldMap['value']!,
+          isEqualTo:
+              value == null ? null : _$ExplicitPathPerFieldToJson.value(value));
+
+  static Filter valueIsNotEqualTo(num? value) =>
+      Filter(_$ExplicitPathFieldMap['value']!,
+          isNotEqualTo:
+              value == null ? null : _$ExplicitPathPerFieldToJson.value(value));
+
+  static Filter valueIsLessThan(num? value) =>
+      Filter(_$ExplicitPathFieldMap['value']!,
+          isLessThan:
+              value == null ? null : _$ExplicitPathPerFieldToJson.value(value));
+
+  static Filter valueIsLessThanOrEqualTo(num? value) =>
+      Filter(_$ExplicitPathFieldMap['value']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$ExplicitPathPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThan(num? value) =>
+      Filter(_$ExplicitPathFieldMap['value']!,
+          isGreaterThan:
+              value == null ? null : _$ExplicitPathPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThanOrEqualTo(num? value) =>
+      Filter(_$ExplicitPathFieldMap['value']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$ExplicitPathPerFieldToJson.value(value));
+
+  static Filter valueWhereIn(Iterable<num?> value) =>
+      Filter(_$ExplicitPathFieldMap['value']!,
+          whereIn: value.map(
+              (e) => e == null ? null : _$ExplicitPathPerFieldToJson.value(e)));
+
+  static Filter valueWhereNotIn(Iterable<num?> value) =>
+      Filter(_$ExplicitPathFieldMap['value']!,
+          whereNotIn: value.map(
+              (e) => e == null ? null : _$ExplicitPathPerFieldToJson.value(e)));
+
+  static Filter valueIsNull(bool value) =>
+      Filter(_$ExplicitPathFieldMap['value']!, isNull: value);
 }
 
 class ExplicitPathDocumentSnapshot
@@ -12794,6 +14034,8 @@ abstract class ExplicitSubPathQuery
     bool? isNull,
   });
 
+  ExplicitSubPathQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -13003,6 +14245,14 @@ class _$ExplicitSubPathQuery
             whereNotIn?.map((e) => _$ExplicitSubPathPerFieldToJson.value(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  ExplicitSubPathQuery whereFirestoreFilter(Filter filter) {
+    return _$ExplicitSubPathQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -13236,6 +14486,53 @@ class _$ExplicitSubPathQuery
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class ExplicitSubPathFilter {
+  ExplicitSubPathFilter._();
+
+  static Filter valueIsEqualTo(num? value) => Filter(
+      _$ExplicitSubPathFieldMap['value']!,
+      isEqualTo:
+          value == null ? null : _$ExplicitSubPathPerFieldToJson.value(value));
+
+  static Filter valueIsNotEqualTo(num? value) => Filter(
+      _$ExplicitSubPathFieldMap['value']!,
+      isNotEqualTo:
+          value == null ? null : _$ExplicitSubPathPerFieldToJson.value(value));
+
+  static Filter valueIsLessThan(num? value) => Filter(
+      _$ExplicitSubPathFieldMap['value']!,
+      isLessThan:
+          value == null ? null : _$ExplicitSubPathPerFieldToJson.value(value));
+
+  static Filter valueIsLessThanOrEqualTo(num? value) => Filter(
+      _$ExplicitSubPathFieldMap['value']!,
+      isLessThanOrEqualTo:
+          value == null ? null : _$ExplicitSubPathPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThan(num? value) => Filter(
+      _$ExplicitSubPathFieldMap['value']!,
+      isGreaterThan:
+          value == null ? null : _$ExplicitSubPathPerFieldToJson.value(value));
+
+  static Filter valueIsGreaterThanOrEqualTo(num? value) => Filter(
+      _$ExplicitSubPathFieldMap['value']!,
+      isGreaterThanOrEqualTo:
+          value == null ? null : _$ExplicitSubPathPerFieldToJson.value(value));
+
+  static Filter valueWhereIn(Iterable<num?> value) => Filter(
+      _$ExplicitSubPathFieldMap['value']!,
+      whereIn: value.map(
+          (e) => e == null ? null : _$ExplicitSubPathPerFieldToJson.value(e)));
+
+  static Filter valueWhereNotIn(Iterable<num?> value) => Filter(
+      _$ExplicitSubPathFieldMap['value']!,
+      whereNotIn: value.map(
+          (e) => e == null ? null : _$ExplicitSubPathPerFieldToJson.value(e)));
+
+  static Filter valueIsNull(bool value) =>
+      Filter(_$ExplicitSubPathFieldMap['value']!, isNull: value);
 }
 
 class ExplicitSubPathDocumentSnapshot

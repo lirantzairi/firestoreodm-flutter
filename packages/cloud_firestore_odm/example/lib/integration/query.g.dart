@@ -330,6 +330,8 @@ abstract class DurationQueryQuery
     bool? isNull,
   });
 
+  DurationQueryQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -540,6 +542,14 @@ class _$DurationQueryQuery
             whereNotIn?.map((e) => _$DurationQueryPerFieldToJson.duration(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  DurationQueryQuery whereFirestoreFilter(Filter filter) {
+    return _$DurationQueryQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -773,6 +783,53 @@ class _$DurationQueryQuery
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class DurationQueryFilter {
+  DurationQueryFilter._();
+
+  static Filter durationIsEqualTo(Duration? value) => Filter(
+      _$DurationQueryFieldMap['duration']!,
+      isEqualTo:
+          value == null ? null : _$DurationQueryPerFieldToJson.duration(value));
+
+  static Filter durationIsNotEqualTo(Duration? value) => Filter(
+      _$DurationQueryFieldMap['duration']!,
+      isNotEqualTo:
+          value == null ? null : _$DurationQueryPerFieldToJson.duration(value));
+
+  static Filter durationIsLessThan(Duration? value) => Filter(
+      _$DurationQueryFieldMap['duration']!,
+      isLessThan:
+          value == null ? null : _$DurationQueryPerFieldToJson.duration(value));
+
+  static Filter durationIsLessThanOrEqualTo(Duration? value) => Filter(
+      _$DurationQueryFieldMap['duration']!,
+      isLessThanOrEqualTo:
+          value == null ? null : _$DurationQueryPerFieldToJson.duration(value));
+
+  static Filter durationIsGreaterThan(Duration? value) => Filter(
+      _$DurationQueryFieldMap['duration']!,
+      isGreaterThan:
+          value == null ? null : _$DurationQueryPerFieldToJson.duration(value));
+
+  static Filter durationIsGreaterThanOrEqualTo(Duration? value) => Filter(
+      _$DurationQueryFieldMap['duration']!,
+      isGreaterThanOrEqualTo:
+          value == null ? null : _$DurationQueryPerFieldToJson.duration(value));
+
+  static Filter durationWhereIn(Iterable<Duration?> value) => Filter(
+      _$DurationQueryFieldMap['duration']!,
+      whereIn: value.map(
+          (e) => e == null ? null : _$DurationQueryPerFieldToJson.duration(e)));
+
+  static Filter durationWhereNotIn(Iterable<Duration?> value) => Filter(
+      _$DurationQueryFieldMap['duration']!,
+      whereNotIn: value.map(
+          (e) => e == null ? null : _$DurationQueryPerFieldToJson.duration(e)));
+
+  static Filter durationIsNull(bool value) =>
+      Filter(_$DurationQueryFieldMap['duration']!, isNull: value);
 }
 
 class DurationQueryDocumentSnapshot
@@ -1171,6 +1228,8 @@ abstract class DateTimeQueryQuery
     bool? isNull,
   });
 
+  DateTimeQueryQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -1381,6 +1440,14 @@ class _$DateTimeQueryQuery
             whereNotIn?.map((e) => _$DateTimeQueryPerFieldToJson.time(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  DateTimeQueryQuery whereFirestoreFilter(Filter filter) {
+    return _$DateTimeQueryQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -1614,6 +1681,53 @@ class _$DateTimeQueryQuery
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class DateTimeQueryFilter {
+  DateTimeQueryFilter._();
+
+  static Filter timeIsEqualTo(DateTime? value) =>
+      Filter(_$DateTimeQueryFieldMap['time']!,
+          isEqualTo:
+              value == null ? null : _$DateTimeQueryPerFieldToJson.time(value));
+
+  static Filter timeIsNotEqualTo(DateTime? value) =>
+      Filter(_$DateTimeQueryFieldMap['time']!,
+          isNotEqualTo:
+              value == null ? null : _$DateTimeQueryPerFieldToJson.time(value));
+
+  static Filter timeIsLessThan(DateTime? value) =>
+      Filter(_$DateTimeQueryFieldMap['time']!,
+          isLessThan:
+              value == null ? null : _$DateTimeQueryPerFieldToJson.time(value));
+
+  static Filter timeIsLessThanOrEqualTo(DateTime? value) =>
+      Filter(_$DateTimeQueryFieldMap['time']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$DateTimeQueryPerFieldToJson.time(value));
+
+  static Filter timeIsGreaterThan(DateTime? value) =>
+      Filter(_$DateTimeQueryFieldMap['time']!,
+          isGreaterThan:
+              value == null ? null : _$DateTimeQueryPerFieldToJson.time(value));
+
+  static Filter timeIsGreaterThanOrEqualTo(DateTime? value) =>
+      Filter(_$DateTimeQueryFieldMap['time']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$DateTimeQueryPerFieldToJson.time(value));
+
+  static Filter timeWhereIn(Iterable<DateTime?> value) =>
+      Filter(_$DateTimeQueryFieldMap['time']!,
+          whereIn: value.map(
+              (e) => e == null ? null : _$DateTimeQueryPerFieldToJson.time(e)));
+
+  static Filter timeWhereNotIn(Iterable<DateTime?> value) =>
+      Filter(_$DateTimeQueryFieldMap['time']!,
+          whereNotIn: value.map(
+              (e) => e == null ? null : _$DateTimeQueryPerFieldToJson.time(e)));
+
+  static Filter timeIsNull(bool value) =>
+      Filter(_$DateTimeQueryFieldMap['time']!, isNull: value);
 }
 
 class DateTimeQueryDocumentSnapshot
@@ -2014,6 +2128,8 @@ abstract class TimestampQueryQuery
     bool? isNull,
   });
 
+  TimestampQueryQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -2224,6 +2340,14 @@ class _$TimestampQueryQuery
             whereNotIn?.map((e) => _$TimestampQueryPerFieldToJson.time(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  TimestampQueryQuery whereFirestoreFilter(Filter filter) {
+    return _$TimestampQueryQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -2457,6 +2581,53 @@ class _$TimestampQueryQuery
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class TimestampQueryFilter {
+  TimestampQueryFilter._();
+
+  static Filter timeIsEqualTo(Timestamp? value) => Filter(
+      _$TimestampQueryFieldMap['time']!,
+      isEqualTo:
+          value == null ? null : _$TimestampQueryPerFieldToJson.time(value));
+
+  static Filter timeIsNotEqualTo(Timestamp? value) => Filter(
+      _$TimestampQueryFieldMap['time']!,
+      isNotEqualTo:
+          value == null ? null : _$TimestampQueryPerFieldToJson.time(value));
+
+  static Filter timeIsLessThan(Timestamp? value) => Filter(
+      _$TimestampQueryFieldMap['time']!,
+      isLessThan:
+          value == null ? null : _$TimestampQueryPerFieldToJson.time(value));
+
+  static Filter timeIsLessThanOrEqualTo(Timestamp? value) => Filter(
+      _$TimestampQueryFieldMap['time']!,
+      isLessThanOrEqualTo:
+          value == null ? null : _$TimestampQueryPerFieldToJson.time(value));
+
+  static Filter timeIsGreaterThan(Timestamp? value) => Filter(
+      _$TimestampQueryFieldMap['time']!,
+      isGreaterThan:
+          value == null ? null : _$TimestampQueryPerFieldToJson.time(value));
+
+  static Filter timeIsGreaterThanOrEqualTo(Timestamp? value) => Filter(
+      _$TimestampQueryFieldMap['time']!,
+      isGreaterThanOrEqualTo:
+          value == null ? null : _$TimestampQueryPerFieldToJson.time(value));
+
+  static Filter timeWhereIn(Iterable<Timestamp?> value) => Filter(
+      _$TimestampQueryFieldMap['time']!,
+      whereIn: value.map(
+          (e) => e == null ? null : _$TimestampQueryPerFieldToJson.time(e)));
+
+  static Filter timeWhereNotIn(Iterable<Timestamp?> value) => Filter(
+      _$TimestampQueryFieldMap['time']!,
+      whereNotIn: value.map(
+          (e) => e == null ? null : _$TimestampQueryPerFieldToJson.time(e)));
+
+  static Filter timeIsNull(bool value) =>
+      Filter(_$TimestampQueryFieldMap['time']!, isNull: value);
 }
 
 class TimestampQueryDocumentSnapshot
@@ -2858,6 +3029,8 @@ abstract class GeoPointQueryQuery
     bool? isNull,
   });
 
+  GeoPointQueryQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -3068,6 +3241,14 @@ class _$GeoPointQueryQuery
             whereNotIn?.map((e) => _$GeoPointQueryPerFieldToJson.point(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  GeoPointQueryQuery whereFirestoreFilter(Filter filter) {
+    return _$GeoPointQueryQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -3301,6 +3482,53 @@ class _$GeoPointQueryQuery
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class GeoPointQueryFilter {
+  GeoPointQueryFilter._();
+
+  static Filter pointIsEqualTo(GeoPoint? value) => Filter(
+      _$GeoPointQueryFieldMap['point']!,
+      isEqualTo:
+          value == null ? null : _$GeoPointQueryPerFieldToJson.point(value));
+
+  static Filter pointIsNotEqualTo(GeoPoint? value) => Filter(
+      _$GeoPointQueryFieldMap['point']!,
+      isNotEqualTo:
+          value == null ? null : _$GeoPointQueryPerFieldToJson.point(value));
+
+  static Filter pointIsLessThan(GeoPoint? value) => Filter(
+      _$GeoPointQueryFieldMap['point']!,
+      isLessThan:
+          value == null ? null : _$GeoPointQueryPerFieldToJson.point(value));
+
+  static Filter pointIsLessThanOrEqualTo(GeoPoint? value) => Filter(
+      _$GeoPointQueryFieldMap['point']!,
+      isLessThanOrEqualTo:
+          value == null ? null : _$GeoPointQueryPerFieldToJson.point(value));
+
+  static Filter pointIsGreaterThan(GeoPoint? value) => Filter(
+      _$GeoPointQueryFieldMap['point']!,
+      isGreaterThan:
+          value == null ? null : _$GeoPointQueryPerFieldToJson.point(value));
+
+  static Filter pointIsGreaterThanOrEqualTo(GeoPoint? value) => Filter(
+      _$GeoPointQueryFieldMap['point']!,
+      isGreaterThanOrEqualTo:
+          value == null ? null : _$GeoPointQueryPerFieldToJson.point(value));
+
+  static Filter pointWhereIn(Iterable<GeoPoint?> value) => Filter(
+      _$GeoPointQueryFieldMap['point']!,
+      whereIn: value.map(
+          (e) => e == null ? null : _$GeoPointQueryPerFieldToJson.point(e)));
+
+  static Filter pointWhereNotIn(Iterable<GeoPoint?> value) => Filter(
+      _$GeoPointQueryFieldMap['point']!,
+      whereNotIn: value.map(
+          (e) => e == null ? null : _$GeoPointQueryPerFieldToJson.point(e)));
+
+  static Filter pointIsNull(bool value) =>
+      Filter(_$GeoPointQueryFieldMap['point']!, isNull: value);
 }
 
 class GeoPointQueryDocumentSnapshot
@@ -3715,6 +3943,8 @@ abstract class DocumentReferenceQueryQuery
     bool? isNull,
   });
 
+  DocumentReferenceQueryQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -3931,6 +4161,14 @@ class _$DocumentReferenceQueryQuery extends QueryReference<
             ?.map((e) => _$DocumentReferenceQueryPerFieldToJson.ref(e)),
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  DocumentReferenceQueryQuery whereFirestoreFilter(Filter filter) {
+    return _$DocumentReferenceQueryQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -4165,6 +4403,67 @@ class _$DocumentReferenceQueryQuery extends QueryReference<
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class DocumentReferenceQueryFilter {
+  DocumentReferenceQueryFilter._();
+
+  static Filter refIsEqualTo(DocumentReference<Map<String, dynamic>>? value) =>
+      Filter(_$DocumentReferenceQueryFieldMap['ref']!,
+          isEqualTo: value == null
+              ? null
+              : _$DocumentReferenceQueryPerFieldToJson.ref(value));
+
+  static Filter refIsNotEqualTo(
+          DocumentReference<Map<String, dynamic>>? value) =>
+      Filter(_$DocumentReferenceQueryFieldMap['ref']!,
+          isNotEqualTo: value == null
+              ? null
+              : _$DocumentReferenceQueryPerFieldToJson.ref(value));
+
+  static Filter refIsLessThan(DocumentReference<Map<String, dynamic>>? value) =>
+      Filter(_$DocumentReferenceQueryFieldMap['ref']!,
+          isLessThan: value == null
+              ? null
+              : _$DocumentReferenceQueryPerFieldToJson.ref(value));
+
+  static Filter refIsLessThanOrEqualTo(
+          DocumentReference<Map<String, dynamic>>? value) =>
+      Filter(_$DocumentReferenceQueryFieldMap['ref']!,
+          isLessThanOrEqualTo: value == null
+              ? null
+              : _$DocumentReferenceQueryPerFieldToJson.ref(value));
+
+  static Filter refIsGreaterThan(
+          DocumentReference<Map<String, dynamic>>? value) =>
+      Filter(_$DocumentReferenceQueryFieldMap['ref']!,
+          isGreaterThan: value == null
+              ? null
+              : _$DocumentReferenceQueryPerFieldToJson.ref(value));
+
+  static Filter refIsGreaterThanOrEqualTo(
+          DocumentReference<Map<String, dynamic>>? value) =>
+      Filter(_$DocumentReferenceQueryFieldMap['ref']!,
+          isGreaterThanOrEqualTo: value == null
+              ? null
+              : _$DocumentReferenceQueryPerFieldToJson.ref(value));
+
+  static Filter refWhereIn(
+          Iterable<DocumentReference<Map<String, dynamic>>?> value) =>
+      Filter(_$DocumentReferenceQueryFieldMap['ref']!,
+          whereIn: value.map((e) => e == null
+              ? null
+              : _$DocumentReferenceQueryPerFieldToJson.ref(e)));
+
+  static Filter refWhereNotIn(
+          Iterable<DocumentReference<Map<String, dynamic>>?> value) =>
+      Filter(_$DocumentReferenceQueryFieldMap['ref']!,
+          whereNotIn: value.map((e) => e == null
+              ? null
+              : _$DocumentReferenceQueryPerFieldToJson.ref(e)));
+
+  static Filter refIsNull(bool value) =>
+      Filter(_$DocumentReferenceQueryFieldMap['ref']!, isNull: value);
 }
 
 class DocumentReferenceQueryDocumentSnapshot

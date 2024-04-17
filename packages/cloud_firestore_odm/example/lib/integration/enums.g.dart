@@ -521,6 +521,8 @@ abstract class EnumsQuery implements QueryReference<Enums, EnumsQuerySnapshot> {
     bool? isNull,
   });
 
+  EnumsQuery whereFirestoreFilter(Filter filter);
+
   /// Perform an order query based on a [FieldPath].
   ///
   /// This method is considered unsafe as it does check that the field path
@@ -967,6 +969,14 @@ class _$EnumsQuery extends QueryReference<Enums, EnumsQuerySnapshot>
             : null,
         isNull: isNull,
       ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  EnumsQuery whereFirestoreFilter(Filter filter) {
+    return _$EnumsQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(filter),
       $queryCursor: $queryCursor,
     );
   }
@@ -1492,6 +1502,223 @@ class _$EnumsQuery extends QueryReference<Enums, EnumsQuerySnapshot>
 
   @override
   int get hashCode => Object.hash(runtimeType, reference);
+}
+
+class EnumsFilter {
+  EnumsFilter._();
+
+  static Filter idIsEqualTo(String? value) => Filter(_$EnumsFieldMap['id']!,
+      isEqualTo: value == null ? null : _$EnumsPerFieldToJson.id(value));
+
+  static Filter idIsNotEqualTo(String? value) => Filter(_$EnumsFieldMap['id']!,
+      isNotEqualTo: value == null ? null : _$EnumsPerFieldToJson.id(value));
+
+  static Filter idIsLessThan(String? value) => Filter(_$EnumsFieldMap['id']!,
+      isLessThan: value == null ? null : _$EnumsPerFieldToJson.id(value));
+
+  static Filter idIsLessThanOrEqualTo(String? value) =>
+      Filter(_$EnumsFieldMap['id']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$EnumsPerFieldToJson.id(value));
+
+  static Filter idIsGreaterThan(String? value) => Filter(_$EnumsFieldMap['id']!,
+      isGreaterThan: value == null ? null : _$EnumsPerFieldToJson.id(value));
+
+  static Filter idIsGreaterThanOrEqualTo(String? value) =>
+      Filter(_$EnumsFieldMap['id']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$EnumsPerFieldToJson.id(value));
+
+  static Filter idWhereIn(Iterable<String?> value) => Filter(
+      _$EnumsFieldMap['id']!,
+      whereIn:
+          value.map((e) => e == null ? null : _$EnumsPerFieldToJson.id(e)));
+
+  static Filter idWhereNotIn(Iterable<String?> value) =>
+      Filter(_$EnumsFieldMap['id']!,
+          whereNotIn:
+              value.map((e) => e == null ? null : _$EnumsPerFieldToJson.id(e)));
+
+  static Filter idIsNull(bool value) =>
+      Filter(_$EnumsFieldMap['id']!, isNull: value);
+
+  static Filter enumValueIsEqualTo(TestEnum? value) => Filter(
+      _$EnumsFieldMap['enumValue']!,
+      isEqualTo: value == null ? null : _$EnumsPerFieldToJson.enumValue(value));
+
+  static Filter enumValueIsNotEqualTo(TestEnum? value) =>
+      Filter(_$EnumsFieldMap['enumValue']!,
+          isNotEqualTo:
+              value == null ? null : _$EnumsPerFieldToJson.enumValue(value));
+
+  static Filter enumValueIsLessThan(TestEnum? value) =>
+      Filter(_$EnumsFieldMap['enumValue']!,
+          isLessThan:
+              value == null ? null : _$EnumsPerFieldToJson.enumValue(value));
+
+  static Filter enumValueIsLessThanOrEqualTo(TestEnum? value) =>
+      Filter(_$EnumsFieldMap['enumValue']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$EnumsPerFieldToJson.enumValue(value));
+
+  static Filter enumValueIsGreaterThan(TestEnum? value) =>
+      Filter(_$EnumsFieldMap['enumValue']!,
+          isGreaterThan:
+              value == null ? null : _$EnumsPerFieldToJson.enumValue(value));
+
+  static Filter enumValueIsGreaterThanOrEqualTo(TestEnum? value) =>
+      Filter(_$EnumsFieldMap['enumValue']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$EnumsPerFieldToJson.enumValue(value));
+
+  static Filter enumValueWhereIn(Iterable<TestEnum?> value) => Filter(
+      _$EnumsFieldMap['enumValue']!,
+      whereIn: value
+          .map((e) => e == null ? null : _$EnumsPerFieldToJson.enumValue(e)));
+
+  static Filter enumValueWhereNotIn(Iterable<TestEnum?> value) => Filter(
+      _$EnumsFieldMap['enumValue']!,
+      whereNotIn: value
+          .map((e) => e == null ? null : _$EnumsPerFieldToJson.enumValue(e)));
+
+  static Filter enumValueIsNull(bool value) =>
+      Filter(_$EnumsFieldMap['enumValue']!, isNull: value);
+
+  static Filter nullableEnumValueIsEqualTo(TestEnum? value) =>
+      Filter(_$EnumsFieldMap['nullableEnumValue']!,
+          isEqualTo: value == null
+              ? null
+              : _$EnumsPerFieldToJson.nullableEnumValue(value));
+
+  static Filter nullableEnumValueIsNotEqualTo(TestEnum? value) =>
+      Filter(_$EnumsFieldMap['nullableEnumValue']!,
+          isNotEqualTo: value == null
+              ? null
+              : _$EnumsPerFieldToJson.nullableEnumValue(value));
+
+  static Filter nullableEnumValueIsLessThan(TestEnum? value) =>
+      Filter(_$EnumsFieldMap['nullableEnumValue']!,
+          isLessThan: value == null
+              ? null
+              : _$EnumsPerFieldToJson.nullableEnumValue(value));
+
+  static Filter nullableEnumValueIsLessThanOrEqualTo(TestEnum? value) =>
+      Filter(_$EnumsFieldMap['nullableEnumValue']!,
+          isLessThanOrEqualTo: value == null
+              ? null
+              : _$EnumsPerFieldToJson.nullableEnumValue(value));
+
+  static Filter nullableEnumValueIsGreaterThan(TestEnum? value) =>
+      Filter(_$EnumsFieldMap['nullableEnumValue']!,
+          isGreaterThan: value == null
+              ? null
+              : _$EnumsPerFieldToJson.nullableEnumValue(value));
+
+  static Filter nullableEnumValueIsGreaterThanOrEqualTo(TestEnum? value) =>
+      Filter(_$EnumsFieldMap['nullableEnumValue']!,
+          isGreaterThanOrEqualTo: value == null
+              ? null
+              : _$EnumsPerFieldToJson.nullableEnumValue(value));
+
+  static Filter nullableEnumValueWhereIn(Iterable<TestEnum?> value) =>
+      Filter(_$EnumsFieldMap['nullableEnumValue']!,
+          whereIn: value.map((e) =>
+              e == null ? null : _$EnumsPerFieldToJson.nullableEnumValue(e)));
+
+  static Filter nullableEnumValueWhereNotIn(Iterable<TestEnum?> value) =>
+      Filter(_$EnumsFieldMap['nullableEnumValue']!,
+          whereNotIn: value.map((e) =>
+              e == null ? null : _$EnumsPerFieldToJson.nullableEnumValue(e)));
+
+  static Filter nullableEnumValueIsNull(bool value) =>
+      Filter(_$EnumsFieldMap['nullableEnumValue']!, isNull: value);
+
+  static Filter enumListIsEqualTo(List<TestEnum>? value) => Filter(
+      _$EnumsFieldMap['enumList']!,
+      isEqualTo: value == null ? null : _$EnumsPerFieldToJson.enumList(value));
+
+  static Filter enumListIsNotEqualTo(List<TestEnum>? value) =>
+      Filter(_$EnumsFieldMap['enumList']!,
+          isNotEqualTo:
+              value == null ? null : _$EnumsPerFieldToJson.enumList(value));
+
+  static Filter enumListIsLessThan(List<TestEnum>? value) => Filter(
+      _$EnumsFieldMap['enumList']!,
+      isLessThan: value == null ? null : _$EnumsPerFieldToJson.enumList(value));
+
+  static Filter enumListIsLessThanOrEqualTo(List<TestEnum>? value) =>
+      Filter(_$EnumsFieldMap['enumList']!,
+          isLessThanOrEqualTo:
+              value == null ? null : _$EnumsPerFieldToJson.enumList(value));
+
+  static Filter enumListIsGreaterThan(List<TestEnum>? value) =>
+      Filter(_$EnumsFieldMap['enumList']!,
+          isGreaterThan:
+              value == null ? null : _$EnumsPerFieldToJson.enumList(value));
+
+  static Filter enumListIsGreaterThanOrEqualTo(List<TestEnum>? value) =>
+      Filter(_$EnumsFieldMap['enumList']!,
+          isGreaterThanOrEqualTo:
+              value == null ? null : _$EnumsPerFieldToJson.enumList(value));
+
+  static Filter enumListArrayContains(TestEnum value) =>
+      Filter(_$EnumsFieldMap['enumList']!,
+          arrayContains:
+              (_$EnumsPerFieldToJson.enumList([value]) as List?)!.single);
+
+  static Filter enumListArrayContainsAny(Iterable<List<TestEnum>?> value) =>
+      Filter(_$EnumsFieldMap['enumList']!,
+          arrayContainsAny: value.map(
+              (e) => e == null ? null : _$EnumsPerFieldToJson.enumList(e)));
+
+  static Filter enumListIsNull(bool value) =>
+      Filter(_$EnumsFieldMap['enumList']!, isNull: value);
+
+  static Filter nullableEnumListIsEqualTo(List<TestEnum>? value) => Filter(
+      _$EnumsFieldMap['nullableEnumList']!,
+      isEqualTo:
+          value == null ? null : _$EnumsPerFieldToJson.nullableEnumList(value));
+
+  static Filter nullableEnumListIsNotEqualTo(List<TestEnum>? value) => Filter(
+      _$EnumsFieldMap['nullableEnumList']!,
+      isNotEqualTo:
+          value == null ? null : _$EnumsPerFieldToJson.nullableEnumList(value));
+
+  static Filter nullableEnumListIsLessThan(List<TestEnum>? value) => Filter(
+      _$EnumsFieldMap['nullableEnumList']!,
+      isLessThan:
+          value == null ? null : _$EnumsPerFieldToJson.nullableEnumList(value));
+
+  static Filter nullableEnumListIsLessThanOrEqualTo(List<TestEnum>? value) =>
+      Filter(_$EnumsFieldMap['nullableEnumList']!,
+          isLessThanOrEqualTo: value == null
+              ? null
+              : _$EnumsPerFieldToJson.nullableEnumList(value));
+
+  static Filter nullableEnumListIsGreaterThan(List<TestEnum>? value) => Filter(
+      _$EnumsFieldMap['nullableEnumList']!,
+      isGreaterThan:
+          value == null ? null : _$EnumsPerFieldToJson.nullableEnumList(value));
+
+  static Filter nullableEnumListIsGreaterThanOrEqualTo(List<TestEnum>? value) =>
+      Filter(_$EnumsFieldMap['nullableEnumList']!,
+          isGreaterThanOrEqualTo: value == null
+              ? null
+              : _$EnumsPerFieldToJson.nullableEnumList(value));
+
+  static Filter nullableEnumListArrayContains(TestEnum value) => Filter(
+      _$EnumsFieldMap['nullableEnumList']!,
+      arrayContains:
+          (_$EnumsPerFieldToJson.nullableEnumList([value]) as List?)!.single);
+
+  static Filter nullableEnumListArrayContainsAny(
+          Iterable<List<TestEnum>?> value) =>
+      Filter(_$EnumsFieldMap['nullableEnumList']!,
+          arrayContainsAny: value.map((e) =>
+              e == null ? null : _$EnumsPerFieldToJson.nullableEnumList(e)));
+
+  static Filter nullableEnumListIsNull(bool value) =>
+      Filter(_$EnumsFieldMap['nullableEnumList']!, isNull: value);
 }
 
 class EnumsDocumentSnapshot extends FirestoreDocumentSnapshot<Enums> {
