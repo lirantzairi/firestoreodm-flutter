@@ -2,7 +2,7 @@ name: cloud_firestore_odm_example
 publish_to: none
 
 environment:
-  sdk: '>=2.18.0 <4.0.0'
+  sdk: '>=3.6.0-edge <4.0.0'
 
 dependencies:
   cloud_firestore: ^4.15.0
@@ -26,7 +26,7 @@ dev_dependencies:
     path: ../../cloud_firestore_odm_generator/cloud_firestore_odm_generator_integration_test
   flutter_test:
     sdk: flutter
-  freezed: ^2.3.2
+  freezed: ^3.0.0-0.0.dev
   http: ^1.0.0
   integration_test:
     sdk: flutter

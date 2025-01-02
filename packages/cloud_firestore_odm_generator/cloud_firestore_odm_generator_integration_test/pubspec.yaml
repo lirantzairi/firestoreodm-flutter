@@ -2,7 +2,7 @@ name: cloud_firestore_odm_generator_integration_test
 publish_to: none
 
 environment:
-  sdk: '>=2.18.0 <4.0.0'
+  sdk: '>=3.6.0-edge <4.0.0'
 
 dependencies:
   cloud_firestore: ^4.15.0
@@ -23,7 +23,7 @@ dev_dependencies:
     path: ..
   flutter_test:
     sdk: flutter
-  freezed: ^2.3.2
+  freezed: ^3.0.0-0.0.dev
   json_serializable: '>=6.6.1 <7.0.0'
 
 flutter:
